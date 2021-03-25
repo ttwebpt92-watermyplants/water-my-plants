@@ -29,9 +29,38 @@
 }
 button {
   padding: 1% 6.5% 1% 6.5%;
-  background-color: rgb(112, 112, 72);
+  background-color:#355e3b;
   border-color: white;
   border-radius: 50px 50px 145px 145px;
+}
+
+
+.h-update-profile {
+  margin-top: 10%;
+}
+
+.h-add-plant {
+  margin-top: 10%;
+}
+
+.profile-card {
+  border: 2px solid#355e3b;
+  margin: 2% 20% 3% 20%;
+  padding: 2% 2% 4.5% 2%;
+}
+
+.update-user {
+  border-radius: 40px;
+  margin-right: 100%;
+  padding: 2% 5% 2% 5%;
+  background-color: #355e3b
+}
+
+.delete {
+  margin: -5.5% -3% -10% 80%;
+  padding: 2% 2% 2% 2%;
+  cursor: pointer;
+  background-color: #355e3b;
 }
 
 @keyframes App-logo-spin {
