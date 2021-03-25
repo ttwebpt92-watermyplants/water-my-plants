@@ -35,7 +35,13 @@ function AddNewPlant(props) {
 
     return (
         <div>
-
+            <nav className='nav'>
+                <h1 className='header-logo'>WMP</h1>
+                <Link to={'/'} className='signup'>Home</Link>
+                <Link to={''} className='profile'>Profile</Link>
+                <Link to={''} className='plantsList'>My Plants</Link>
+                <Link to={''} className='logout'>Logout</Link>
+            </nav>
             <h1 className='h-add-plant'>
                 Add New Plant
             </h1>
