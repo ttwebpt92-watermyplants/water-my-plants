@@ -1,30 +1,30 @@
 import React from 'react'
+<<<<<<< HEAD
 import { NavLinks, Route } from 'react-router'
+=======
+import { Router, NavLinks } from 'react-router-dom'
+>>>>>>> 43880297d17df102aad201cb2bab39c2fbf4cca7
 import styled, { css } from 'styled-components'
 
 import SignupForm from './SignupForm'
 
 import './App.css';
 
+import Navbar from './Navbar'
 
 function App() {
 
 
   return (
     <MainDiv>
-      <HeaderDiv>
-        Water My Plants
-      </HeaderDiv>
-      <NavBar>
-        <NavButton>Home</NavButton>
-        <NavButton>Register</NavButton>
-        <NavButton>Login</NavButton>
-        <NavButton>Help</NavButton>
-      </NavBar>
+      <HeaderDiv>Water My Plants</HeaderDiv>
+
+      <Navbar />
 
       <StyledDiv>
-        <h2>Keep Track Of All Your Beloved Plants!</h2>
-        <p>Lorem ipsum dolorem.</p>
+        <h2>Sign Up And Keep Track Of All Your Beloved Plants!</h2>
+        <SignupButton as="a" href="#" style={{ textDecoration: 'none' }} >Sign Up!</SignupButton>
+        <p>Quick and easy sign up process and </p>
       </StyledDiv>
 
       <StyledDiv>
@@ -78,10 +78,11 @@ const HeaderDiv = styled.h1`
   background-color: white;
 `;
 
-const NavBar = styled.div`
+const StyledDiv = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
   border: 1px solid rgb(210, 210, 210);
   border-radius: 6px;
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
@@ -90,25 +91,19 @@ const NavBar = styled.div`
   background-color: white;
 `;
 
-const NavButton = styled.button`
+const Button = styled.button`
   display: flex;
   flex-direction: row;
   border: 1px solid teal;
   border-radius: 6px;
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
-  margin: 16px 8px;
+  margin: 6px 6px;
   padding: 16px;
+  max-width: 50%;
   background-color: white;
 `;
 
-const StyledDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: 1px solid rgb(210, 210, 210);
-  border-radius: 6px;
-  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
-  margin: 16px 8px;
-  padding: 16px;
-  background-color: white;
+const SignupButton = styled(Button)`
+  color: huntergreen;
+  border-color: huntergreen;
 `;
