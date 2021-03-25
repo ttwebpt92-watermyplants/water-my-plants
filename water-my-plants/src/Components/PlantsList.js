@@ -20,12 +20,13 @@ export default function PlantsList() {
   return (
     <div className='plants-list'>
 <nav className='nav'>
-
-        <Link to={''} className='signup'>Home</Link>
-        <Link to={''} className='profile'>Profile</Link>
-        <Link to={''} className='addNewPlant'>Add New Plant</Link>
-        <Link to={''} className='logout'>Logout</Link>
-      </nav>
+                <Link to={'/'} className='signup'>Home</Link>
+                <Link to={''} className='signup'>Sign Up</Link>
+                <Link to={''} className='profile'>Profile</Link>
+                <Link to={''} className='login'>Login</Link>
+                <Link to={''} className='plantsList'>My Plants</Link>
+                <Link to={''} className='addNewPlant'>Add New Plant</Link>
+            </nav>
       <h1> My Plants </h1>
       <div>
         {plants.map(plant => (
