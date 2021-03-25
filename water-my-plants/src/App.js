@@ -8,6 +8,8 @@ import Navbar from './Navbar';
 import AddNewPlant from './components/AddNewPlant';
 import PlantsList from './components/PlantsList';
 import UpdatePlant from './components/UpdatePlant';
+import Profile from './components/Users';
+import UpdateUser from './components/UpdateUser';
 
 function App() {
 
