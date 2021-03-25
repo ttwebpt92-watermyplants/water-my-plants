@@ -7,6 +7,7 @@ import './App.css';
 import Navbar from './Navbar';
 import AddNewPlant from './components/AddNewPlant';
 import PlantsList from './components/PlantsList';
+import UpdatePlant from './components/UpdatePlant';
 
 function App() {
 
