@@ -1,35 +1,40 @@
 import React from 'react'
-import { Route, NavLinks } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 
 import './App.css';
 
-import SignupForm from './SignupForm'
-import Navbar from './Navbar'
-import Homepage from './Homepage'
-
-function App() {
+export default function Homepage() {
 
 
   return (
     <MainDiv>
-      <HeaderDiv>Water My Plants</HeaderDiv>
 
-      <Navbar />
-      <Homepage />
+      <StyledDiv>
+        <h2>Sign Up And Keep Track Of All Your Beloved Plants!</h2>
+        <SignupButton as="a" href="/SignupForm" style={{ textDecoration: 'none' }} >Sign Up!</SignupButton>
+        <p>Quick and easy sign up process and </p>
+      </StyledDiv>
 
-      <Route exact path="/Homepage" />
-      <Route path="/SignupForm/">
-        <SignupForm />
-      </Route>
+      <StyledDiv>
+        <h2>Set A Daily/Weekly Schedule!</h2>
+        <p>Lorem ipsum dolorem.</p>
+      </StyledDiv>
+
+      <StyledDiv>
+        <h2>Search From Our Large Database Of Plants!</h2>
+        <p>Lorem ipsum dolorem.</p>
+      </StyledDiv>
+
+      <StyledDiv>
+        <h2>Easily Edit Your Saved Schedules!</h2>
+        <p>Lorem ipsum dolorem.</p>
+      </StyledDiv>
 
     </MainDiv>
 
     
   );
 }
-
-export default App;
 
 const MainDiv = styled.div`
   display: flex;
