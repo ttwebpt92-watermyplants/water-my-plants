@@ -1,6 +1,8 @@
 import React from 'react'
-import { NavLinks } from 'react-router'
+import { NavLinks, Route } from 'react-router'
 import styled, { css } from 'styled-components'
+
+import SignupForm from './SignupForm'
 
 import './App.css';
 
@@ -40,7 +42,13 @@ function App() {
         <p>Lorem ipsum dolorem.</p>
       </StyledDiv>
 
+      <Route exact path="/SignupForm">
+        <SignupForm/>
+      </Route>
+
     </MainDiv>
+
+    
   );
 }
 

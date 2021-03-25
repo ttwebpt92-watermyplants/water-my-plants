@@ -7,7 +7,7 @@ export default function SignupForm() {
     return (
         //placeholder code for sign up form
         <MainDiv>
-            
+            Sign Up Form!
         </MainDiv>
     )
 }
