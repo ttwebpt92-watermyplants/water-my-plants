@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 
 import './App.css';
@@ -11,6 +12,9 @@ export default function Homepage() {
 
       <StyledDiv>
         <h2>Sign Up And Keep Track Of All Your Beloved Plants!</h2>
+        {/* code for possible NavLink */}
+        {/* <NavLink to="/SignupForm">Sign Up Now!</NavLink> */}
+
         <SignupButton as="a" href="/SignupForm" style={{ textDecoration: 'none' }} >Sign Up!</SignupButton>
         <p>Quick and easy sign up process and </p>
       </StyledDiv>
@@ -86,6 +90,6 @@ const Button = styled.button`
 `;
 
 const SignupButton = styled(Button)`
-  color: huntergreen;
-  border-color: huntergreen;
+  color: green;
+  border-color: green;
 `;
