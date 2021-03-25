@@ -4,7 +4,9 @@ import styled, { css } from 'styled-components'
 
 import './App.css';
 
-import Navbar from './Navbar'
+import Navbar from './Navbar';
+import AddNewPlant from './components/AddNewPlant';
+import PlantsList from './components/PlantsList';
 
 function App() {
 
