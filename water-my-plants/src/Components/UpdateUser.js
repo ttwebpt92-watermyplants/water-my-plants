@@ -28,7 +28,7 @@ function UpdateUser(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
         axios
-        .put('https://reqres.in/api/users/2', user) // sends a post request to the server and sends data to the signin endpoint
+        .put('', user) // sends a post request to the server and sends data to the signin endpoint
         .then(result => {
               //props.history.push('/users')   //reroute back to users component
               console.log(result.data)
