@@ -7,6 +7,7 @@ import './App.css';
 import SignupForm from './SignupForm'
 import Navbar from './Navbar'
 import Homepage from './Homepage'
+import Login from './Login'
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
       <Route exact path="/Homepage" />
       <Route path="/SignupForm/">
         <SignupForm />
+      </Route>
+      <Route path='/Login'>
+        <Login />
       </Route>
 
     </MainDiv>

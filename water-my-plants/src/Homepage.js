@@ -16,7 +16,7 @@ export default function Homepage() {
         {/* <NavLink to="/SignupForm">Sign Up Now!</NavLink> */}
 
         <SignupButton as="a" href="/SignupForm" style={{ textDecoration: 'none' }} >Sign Up!</SignupButton>
-        <LoginButton as ="a" href="#" style={{ textDecoration: 'none' }}>Login Now!</LoginButton>
+        <LoginButton as ="a" href="/Login" style={{ textDecoration: 'none' }}>Login Now!</LoginButton>
         <p>Quick and easy sign up process and </p>
       </StyledDiv>
 
