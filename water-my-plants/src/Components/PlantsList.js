@@ -20,7 +20,6 @@ export default function PlantsList() {
   return (
     <div className='plants-list'>
 <nav className='nav'>
-
                 <Link to={'/'} className='signup'>Home</Link>
                 <Link to={''} className='signup'>Sign Up</Link>
                 <Link to={''} className='profile'>Profile</Link>
