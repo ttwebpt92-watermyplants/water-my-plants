@@ -33,7 +33,13 @@ export default function Users() {
 
   return (
     <div className='profile'>
+<nav className='nav'>
 
+        <Link to={''} className='home-nav'>Home</Link>
+        <Link to={''} className='plantsList'>My Plants</Link>
+        <Link to={''} className='addNewPlant'>Add New Plant</Link>
+        <Link to={''} className='logout'>Logout</Link>
+      </nav>
       <h1> Users </h1>
       <div >
         {users.map(user => (
