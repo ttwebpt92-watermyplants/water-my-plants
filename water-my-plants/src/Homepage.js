@@ -16,6 +16,7 @@ export default function Homepage() {
         {/* <NavLink to="/SignupForm">Sign Up Now!</NavLink> */}
 
         <SignupButton as="a" href="/SignupForm" style={{ textDecoration: 'none' }} >Sign Up!</SignupButton>
+        <LoginButton as ="a" href="#" style={{ textDecoration: 'none' }}>Login Now!</LoginButton>
         <p>Quick and easy sign up process and </p>
       </StyledDiv>
 
@@ -92,4 +93,10 @@ const Button = styled.button`
 const SignupButton = styled(Button)`
   color: green;
   border-color: green;
+`;
+
+const LoginButton = styled(Button)`
+  color: green;
+  border-color: green;
+  background-color: lightgreen;  
 `;
