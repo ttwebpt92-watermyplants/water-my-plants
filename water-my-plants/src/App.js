@@ -14,10 +14,16 @@ function App() {
         Water My Plants
       </HeaderDiv>
       <NavBar>
-        <NavButton>Home</NavButton>
+        {/* commented for now, pending further discussion on what else is going in the App nav bar once user is logged in  */}
+        {/* <NavButton>Home</NavButton>
         <NavButton>Register</NavButton>
-        <NavButton>Login</NavButton>
+        <NavButton>Login</NavButton> */}
+        <NavButton>My Plants</NavButton>
+        <NavButton>Add Plants</NavButton>
+        <NavButton>Profile</NavButton>
+        <NavButton>Log Out</NavButton>
         <NavButton>Help</NavButton>
+
       </NavBar>
 
       <StyledDiv>
