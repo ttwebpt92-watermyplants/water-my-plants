@@ -5,7 +5,7 @@ export default function Login() {
 
     return (
         <LoginForm>
-        <h2>Log In!</h2>
+        <h2>Log Me In!</h2>
             <FormDiv>
                 <label>Username&nbsp;
                     <input name="username" type="text" />
