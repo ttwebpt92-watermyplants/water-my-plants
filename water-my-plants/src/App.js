@@ -5,11 +5,11 @@ import styled, { css } from 'styled-components'
 import './App.css';
 
 import Navbar from './Navbar';
-import AddNewPlant from './components/AddNewPlant';
-import PlantsList from './components/PlantsList';
-import UpdatePlant from './components/UpdatePlant';
-import Profile from './components/Users';
-import UpdateUser from './components/UpdateUser';
+import AddNewPlant from './Components/AddNewPlant';
+import PlantsList from './Components/PlantsList';
+import UpdatePlant from './Components/UpdatePlant';
+import Profile from './Components/Users';
+import UpdateUser from './Components/UpdateUser';
 
 function App() {
 

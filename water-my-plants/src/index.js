@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Login from './components/Login/Login'
+import Login from './Components/Login/Login'
 
 ReactDOM.render(
   <Router>
