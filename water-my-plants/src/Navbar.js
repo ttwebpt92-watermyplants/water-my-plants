@@ -7,8 +7,8 @@ export default function Navbar() {
     return (
         <NavBarDiv>
             {/* commented for now, pending further discussion on what else is going in the App nav bar once user is logged in  */}
-            {/* <NavButton>Home</NavButton>
-            <NavButton>Sign Up</NavButton>
+            <NavButton>Home</NavButton>
+            {/* <NavButton>Sign Up</NavButton>
             <NavButton>Login</NavButton> */}
             <NavButton>My Plants</NavButton>
             <NavButton>Add Plants</NavButton>
