@@ -27,6 +27,7 @@
 .App-link {
   color: #61dafb;
 }
+
 button {
   padding: 1% 6.5% 1% 6.5%;
   background-color:#355e3b;
@@ -70,4 +71,25 @@ button {
   to {
     transform: rotate(360deg);
   }
+}
+
+.home-nav-btn {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgb(0, 128, 64);
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  margin: 16px 8px;
+  padding: 8px;
+  background-color: white;
+}
+.nav-btn {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgb(75, 121, 98);
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  margin: 16px 8px;
+  padding: 8px;
+  background-color: white;
 }

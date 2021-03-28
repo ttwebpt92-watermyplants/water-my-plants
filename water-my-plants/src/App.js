@@ -23,14 +23,15 @@ function App() {
 
         {/* Bootstrap styling -- Navbar light */}
           <NavBarDiv>
-            <Navbar bg="light" variant="light">
-              <Navbar.Brand href="/Homepage" defaultActiveKey="/Homepage">Home</Navbar.Brand>
+            <Navbar>
+              <Navbar.Brand className="home-nav-btn" href="/Homepage" defaultActiveKey="/Homepage">Home</Navbar.Brand>
               <Nav  className="mr-auto">
-                <Nav.Link href="SignupForm">Sign Up</Nav.Link>
-                <Nav.Link href="Login">Login</Nav.Link>
+                <Nav.Link className="nav-btn" href="SignupForm">Sign Up</Nav.Link>
+                <Nav.Link className="nav-btn" href="Login">Login</Nav.Link>
               </Nav>        
             </Navbar>
           </NavBarDiv>
+
           {/* Nav with pills -- bootstrap */}
 
           {/* <Container>
