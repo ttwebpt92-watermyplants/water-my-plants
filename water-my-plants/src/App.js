@@ -1,13 +1,14 @@
 import React from 'react'
 import { Route, Link, Switch, NavLink } from 'react-router-dom'
-import styled, { css } from 'styled-components'
-
+import styled from 'styled-components'
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import './App.css';
 
 import SignupForm from './SignupForm'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 import Homepage from './Homepage'
 import Login from './Login'
+// import Login from './Components/Login/Login'
 import AddNewPlant from './Components/AddNewPlant';
 import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
@@ -20,11 +21,37 @@ function App() {
         <MainDiv>
           <HeaderDiv>Water My Plants</HeaderDiv>
 
+        {/* Bootstrap styling -- Navbar light */}
           <NavBarDiv>
+            <Navbar bg="light" variant="light">
+              <Navbar.Brand href="/Homepage" defaultActiveKey="/Homepage">Home</Navbar.Brand>
+              <Nav  className="mr-auto">
+                <Nav.Link href="SignupForm">Sign Up</Nav.Link>
+                <Nav.Link href="Login">Login</Nav.Link>
+              </Nav>        
+            </Navbar>
+          </NavBarDiv>
+          {/* Nav with pills -- bootstrap */}
+
+          {/* <Container>
+            <Nav variant="pills" defaultActiveKey="/Homepage">
+              <Nav.Item>
+                  <Nav.Link href="/Homepage">Home</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link href="SignupForm" eventKey="link-1">Sign Up!</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link href="Login" eventKey="link-3">Login!</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Container> */}
+
+          {/* <NavBarDiv>
             <NavButton to='/Homepage'>Home</NavButton>
             <NavButton to='/SignupForm'>Sign Up</NavButton>
             <NavButton to='/Login'>Login</NavButton>
-          </NavBarDiv>
+          </NavBarDiv> */}
 
           <Switch>
             <Route exact path='/Homepage'>
@@ -108,8 +135,8 @@ const NavBarDiv = styled.div`
   border: 1px solid rgb(210, 210, 210);
   border-radius: 6px;
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
-  margin: 16px 8px;
-  padding: 16px;
+  margin: 6px 8px;
+  padding: 6px;
   background-color: white;
 `;
 

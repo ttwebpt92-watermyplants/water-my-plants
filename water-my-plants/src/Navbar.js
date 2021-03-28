@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import 'bootstrap/dist/css/bootstrap.css'
-import { Container } from 'bootstrap'
+// import { Container } from 'bootstrap'
+import { Container, Nav } from 'react-bootstrap';
 
 export default function Navbar() {
 
@@ -20,19 +20,19 @@ export default function Navbar() {
             
             {/* Bootstrap Styling */}
 
-            {/* <Container>
-                <Nav variant="pills" defaultActiveKey="/home">
+            <Container>
+                <Nav variant="pills" defaultActiveKey="/Homepage">
                     <Nav.Item>
-                        <Nav.Link href="/home">Active</Nav.Link>
+                        <Nav.Link href="/Homepage">Home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="link-1">Option 2</Nav.Link>
+                        <Nav.Link href="PlantsList" eventKey="link-1">My Plants</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="disabled" disabled>Disabled</Nav.Link>
+                        <Nav.Link href="Users" eventKey="link-3">Profile</Nav.Link>
                     </Nav.Item>
                 </Nav>
-            </Container> */}
+            </Container>
         </NavBarDiv>
 
 
