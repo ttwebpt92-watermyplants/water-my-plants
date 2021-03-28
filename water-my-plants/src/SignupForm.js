@@ -1,32 +1,83 @@
-import React from 'react'
+import axios from 'axios';
+import React,{ useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components'
 
-export default function SignupForm() {
+const initialState = {
+    name:"",
+    password:"",
+    phone_number:"",
+    error_msg:""
+};
 
-    // needs defined props?
-    // submit handler
-    // onchange handler
+export default function SignupForm(props) {
 
+    const [ newUser, setNewUser] = useState(initialState);
+    const history = useHistory();
 
+    const changeHandler = (event) => {
+        setNewUser({
+            ...newUser,
+            [event.target.name]: event.target.value
+        });
+    };
+
+    const submitForm = (event) => {
+        event.preventDefault();
+        console.log("form submitted: ", newUser);
+    //     axios.post("http://", newUser) <-- need endpoint for post request
+    //         .then((res) => {
+    //             console.log(res);
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         })
+    // };
+    }
 
     return (
         //placeholder code for sign up form
-        <MainForm>
+        <MainForm onSubmit={submitForm}>
         <h2>Sign Up and Get Started!</h2>
             <FormDiv>
                 <label>Username&nbsp;
-                    <input name="username" type="text" />
+                    <input
+                        type="text"
+                        name="username"
+                        id="username"
+                        className="signUpInput"
+                        placeholder="Example: help_me"
+                        value={newUser.username}
+                        onChange={changeHandler}
+                        required
+                    />
                 </label>&nbsp;&nbsp;
 
                 <label>Phone Number&nbsp;
-                    <input name="phonenumber" type="text"/>
+                    <input
+                        name="phonenumber"
+                        type="text"
+                        id="phonenumber"
+                        placeholder="Example:1234567890"
+                        value={newUser.phone_number}
+                        onChange={changeHandler}
+                        required
+                    />
                 </label>&nbsp;&nbsp;
 
                 <label>Password&nbsp;
-                    <input name="password" type="text"/>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Example:lessThen3"
+                        value={newUser.password}
+                        onChange={changeHandler}
+                        required
+                    />
                 </label>
             </FormDiv>
-            <SubmitButton>Submit!</SubmitButton>
+            <SubmitButton type='submit'>Submit!</SubmitButton>
         </MainForm>
     )
 }
@@ -47,6 +98,7 @@ const MainForm = styled.form`
 const FormDiv = styled.div`
   display: flex;
   flex-direction: column;
+  align-items:flex-end;
   justify-content: space-between;
   border: 1px solid rgb(210, 210, 210);
   border-radius: 6px;
@@ -68,4 +120,4 @@ const SubmitButton = styled.button`
   max-width: 50%;
   background-color: #75ec73;
   color: bold green;
-`;
+  `
