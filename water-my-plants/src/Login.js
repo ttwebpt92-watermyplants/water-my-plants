@@ -91,7 +91,7 @@ export default function Login (props) {
                     />
                 </label>
                 {loginData.error_visible ? <ErrorMsgDiv>
-            <ErrorMsgP className="error_msg">{loginData.error}</ErrorMsgP>
+            <ErrorMsgP>{loginData.error}</ErrorMsgP>
             </ErrorMsgDiv> : null}
             </FormDiv>
             <LoginButton type="submit">Log Me In!</LoginButton>
@@ -101,13 +101,14 @@ export default function Login (props) {
 
 const ErrorMsgP = styled.p`
   font-size: 0.9rem;
+  margin: 0 auto;
 `;
 
 const ErrorMsgDiv = styled.div`
   background-color: #FEC1C1;
   margin-top: 3%;
   padding: 3% 0%;
-  border-radius: 10px;
+  border-radius: 15px;
 `;
 
 const LoginForm = styled.form`
