@@ -1,10 +1,16 @@
-.App {
-  text-align: center;
+
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1525498128493-380d1990a112?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fHBsYW50fGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80');
+  /* font-family: 'Amatic SC', cursive; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, h4, h5 {
+  font-family: 'Amatic SC', cursive;
+}
+
+.h1-main {
+  font-size: 75px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,22 +19,9 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-.button {
+button {
   padding: 1% 6.5% 1% 6.5%;
   background-color:#355e3b;
   border-color: white;
@@ -76,12 +69,12 @@
 .home-nav-btn {
   display: flex;
   flex-direction: row;
-  border: 1px solid rgb(0, 128, 64);
+  border: 1px solid rgb(0, 128, 6);
   border-radius: 6px;
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 8px;
-  background-color: #36a851;
+  background-color: #6df18c;
   color: white;
 }
 .nav-btn {
@@ -92,7 +85,7 @@
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 8px;
-  background-color: rgb(233, 250, 231);
+  background-color: #f8dd8c;
 }
 
 .signupButton {

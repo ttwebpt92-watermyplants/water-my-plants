@@ -28,21 +28,21 @@ export default function Homepage() {
           <p>Pick the daily/weekly schedule that works best for you and your plants.</p>
           <p>Avoid over-watering; select timing based on your plant's specific needs.</p>
           <Col xs={12} sm={16} md={16} className="m-auto">
-            <Image className="d-block mx-auto img-fluid w-50" src="brooke-lark-plant-img.jpg" rounded fluid/>
+            <Image className="d-block mx-auto img-fluid w-50" src="brooke-lark-plant-img.jpg" rounded fluid/><br/>
             </Col>
         </Card><br/>
         <Card>
           <h2>Search From Our Large Database Of Plants!</h2>
           <p>Lorem ipsum dolorem.</p>
           <Col xs={12} sm={16} md={16} className="m-auto">
-            <Image className="d-block mx-auto img-fluid w-50" src="plant-database-img.jpeg" rounded fluid/>
+            <Image className="d-block mx-auto img-fluid w-50" src="plant-database-img.jpeg" rounded fluid/><br/>
           </Col>
         </Card><br/>
         <Card>
         <h2>Easily Edit Your Saved Schedules!</h2>
         <p>Lorem ipsum dolorem.</p>
         <Col xs={12} sm={16} md={16} className="m-auto">
-            <Image className="d-block mx-auto img-fluid w-50" src="plant-flex-schedule-img.jpeg" rounded fluid/>
+            <Image className="d-block mx-auto img-fluid w-50" src="plant-flex-schedule-img.jpeg" rounded fluid/><br/>
           </Col>        
         </Card>
         </Col>
@@ -85,12 +85,12 @@ const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 1px solid rgb(210, 210, 210);
+  // border: 1px solid rgb(210, 210, 210);
+  // box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   border-radius: 6px;
-  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 16px;
-  background-color: white;
+  // background-color: white;
 `;
 
 const HeaderDiv = styled.h1`

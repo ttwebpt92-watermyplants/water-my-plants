@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Link, Switch, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Card, Col } from 'react-bootstrap';
 import './App.css';
 
 import SignupForm from './SignupForm'
@@ -19,8 +19,14 @@ function App() {
 
       return (
         <MainDiv>
-          <HeaderDiv>Water My Plants</HeaderDiv>
-
+          <Container>
+          <Card >
+            {/* <Card.Body> */}
+            <h1 className="h1-main">Remember The Plants!</h1>
+            <h4 className="text-muted">A Scheduling App for Plant Care</h4>
+            {/* </Card.Body> */}
+          </Card>
+          </Container>
         {/* Bootstrap styling -- Navbar light */}
           <NavBarDiv>
             <Navbar>
@@ -78,12 +84,12 @@ const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 1px solid rgb(210, 210, 210);
+  // border: 1px solid rgb(210, 210, 210);
+  // box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   border-radius: 6px;
-  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 16px;
-  background-color: #5ba35b;
+  // background-color: #5ba35b;
 `;
 // color selections for styled components
 //5ba35b current green color
@@ -101,7 +107,7 @@ const HeaderDiv = styled.h1`
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 16px;
-  background-color: #FFEFD5;
+  // background-color: #FFEFD5;
   color: black;
 `;
 
@@ -139,12 +145,12 @@ const NavBarDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 1px solid rgb(210, 210, 210);
+  // border: 1px solid rgb(210, 210, 210);
+  // box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   border-radius: 6px;
-  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 6px 8px;
-  padding: 6px;
-  background-color: white;
+  padding: 0px;
+  // background-color: white;
 `;
 
 const NavButton = styled(NavLink)`
