@@ -1,10 +1,13 @@
 import React from 'react'
-import { Router, NavLinks } from 'react-router-dom'
+import { Route, Link, Switch, NavLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 
 import './App.css';
 
-import Navbar from './Navbar';
+import SignupForm from './SignupForm'
+import Navbar from './Navbar'
+import Homepage from './Homepage'
+import Login from './Login'
 import AddNewPlant from './Components/AddNewPlant';
 import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
@@ -13,40 +16,36 @@ import UpdateUser from './Components/UpdateUser';
 
 function App() {
 
+      return (
+        <MainDiv>
+          <HeaderDiv>Water My Plants</HeaderDiv>
 
-  return (
-    <MainDiv>
-      <HeaderDiv>Water My Plants</HeaderDiv>
+          <NavBarDiv>
+            <NavButton to='/Homepage'>Home</NavButton>
+            <NavButton to='/SignupForm'>Sign Up</NavButton>
+            <NavButton to='/Login'>Login</NavButton>
+          </NavBarDiv>
 
-      <Navbar />
+          <Switch>
+            <Route exact path='/Homepage'>
+              <Homepage/>
+            </Route>
+            <Route path='/SignupForm'>
+              <SignupForm/>
+            </Route>
+            <Route path='/Login'>
+              <Login/>
+            </Route>
+          </Switch>
 
-      <StyledDiv>
-        <h2>Sign Up And Keep Track Of All Your Beloved Plants!</h2>
-        <SignupButton as="a" href="#" style={{ textDecoration: 'none' }} >Sign Up!</SignupButton>
-        <p>Quick and easy sign up process and </p>
-      </StyledDiv>
-
-      <StyledDiv>
-        <h2>Set A Daily/Weekly Schedule!</h2>
-        <p>Lorem ipsum dolorem.</p>
-      </StyledDiv>
-
-      <StyledDiv>
-        <h2>Search From Our Large Database Of Plants!</h2>
-        <p>Lorem ipsum dolorem.</p>
-      </StyledDiv>
-
-      <StyledDiv>
-        <h2>Easily Edit Your Saved Schedules!</h2>
-        <p>Lorem ipsum dolorem.</p>
-      </StyledDiv>
-
-    </MainDiv>
-  );
+        </MainDiv>
+      )
 }
 
 export default App;
 
+
+/// Styling ///
 const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -56,7 +55,7 @@ const MainDiv = styled.div`
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 16px;
-  background-color: white;
+  background-color:#6B8E23 ;
 `;
 
 const HeaderDiv = styled.h1`
@@ -68,7 +67,8 @@ const HeaderDiv = styled.h1`
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 16px;
-  background-color: white;
+  background-color: #FFEFD5;
+  color: black;
 `;
 
 const StyledDiv = styled.div`
@@ -99,4 +99,29 @@ const Button = styled.button`
 const SignupButton = styled(Button)`
   color: huntergreen;
   border-color: huntergreen;
+`;
+
+const NavBarDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  margin: 16px 8px;
+  padding: 16px;
+  background-color: white;
+`;
+
+const NavButton = styled(NavLink)`
+  display: flex;
+  flex-direction: row;
+  border: 1px solid teal;
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  margin: 16px 8px;
+  padding: 16px;
+  background-color: white;
+  text-decoration: none;
+  color:black;
 `;
