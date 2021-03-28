@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{ useState } from 'react'
 import { useHistory } from 'react-router-dom';
+import { Button } from 'react-bootstrap'
 import styled from 'styled-components'
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -111,7 +112,11 @@ export default function SignupForm(props) {
             <ErrorMsgP>{newUser.error_msg}</ErrorMsgP>
             </ErrorMsgDiv> : null}
             </FormDiv>
-            <SubmitButton type='submit'>Submit!</SubmitButton>
+            {/* <SubmitButton type='submit'>Submit!</SubmitButton> */}
+            {/* Added button with react bootstrap styling */}
+
+            <Button variant="warning" size="lg" type="submit">Submit</Button>
+
         </MainForm>
     )
 }

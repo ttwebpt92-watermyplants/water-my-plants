@@ -16,10 +16,12 @@ export default function Homepage() {
       <Container>
         <Col>
         <Card>
-          <h2>Sign Up And Keep Track Of All Your Beloved Plants!</h2>
-          <p>Quick and easy sign up process!</p>
-          <div><Button variant="success" href="/SignupForm">Sign Up!</Button></div><br/>
-          <div><Button variant="warning" href="/Login">Login Now!</Button></div><br/>
+          <Card.Body>
+            <h2>Sign Up And Keep Track Of All Your Beloved Plants!</h2>
+            <Card.Text>Quick and easy sign up process!</Card.Text>
+            <div><Button variant="success" href="/SignupForm">Sign Up!</Button></div><br/>
+            <div><Button variant="warning" href="/Login">Login Now!</Button></div><br/>
+          </Card.Body>
         </Card><br/>
         <Card>
           <h2>Set A Daily/Weekly Schedule!</h2>

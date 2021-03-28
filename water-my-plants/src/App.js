@@ -33,7 +33,6 @@ function App() {
           </NavBarDiv>
 
           {/* Nav with pills -- bootstrap */}
-
           {/* <Container>
             <Nav variant="pills" defaultActiveKey="/Homepage">
               <Nav.Item>
@@ -48,6 +47,7 @@ function App() {
             </Nav>
           </Container> */}
 
+          {/* Navbar with styled components */ }
           {/* <NavBarDiv>
             <NavButton to='/Homepage'>Home</NavButton>
             <NavButton to='/SignupForm'>Sign Up</NavButton>
@@ -83,8 +83,10 @@ const MainDiv = styled.div`
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 16px;
-  background-color:#228B22 ;
+  background-color: #5ba35b;
 `;
+// color selections for styled components
+//5ba35b current green color
 //228B22 forest green
 //9ACD32 yellowgreen
 //8FBC8F dark seagreen

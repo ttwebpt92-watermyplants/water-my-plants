@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Button } from 'react-bootstrap'
+
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -94,7 +96,10 @@ export default function Login (props) {
             <ErrorMsgP>{loginData.error}</ErrorMsgP>
             </ErrorMsgDiv> : null}
             </FormDiv>
-            <LoginButton type="submit">Log Me In!</LoginButton>
+            {/* <LoginButton type="submit">Log Me In!</LoginButton> */}
+
+            {/* Added login button with react bootstrap styling */}
+            <Button variant="warning" size="lg" type="submit">Log Me In!</Button>
         </LoginForm>
     )
 }
