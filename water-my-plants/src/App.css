@@ -28,7 +28,7 @@
   color: #61dafb;
 }
 
-button {
+.button {
   padding: 1% 6.5% 1% 6.5%;
   background-color:#355e3b;
   border-color: white;
@@ -92,4 +92,18 @@ button {
   margin: 16px 8px;
   padding: 8px;
   background-color: white;
+}
+
+.signupButton {
+	margin: 0 auto;
+  min-width: 130px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+}
+
+.loginButton {
+	margin: 0 auto;
+  min-width: 130px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
 }
