@@ -1,24 +1,115 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
-export default function Login() {
+const initialState = {
+  username: "",
+  password: "",
+  error: "",
+  error_visible: false
+};
+
+export default function Login (props) {
+
+  const [loginData, setLoginData] = useState(initialState);
+  const history = useHistory();
+
+  const changeHandler = (event) => {
+    setLoginData({
+      ...loginData,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const submitLogin = async (event) => {
+    event.preventDefault();
+    console.log("submit");
+    if (!loginData.password && !loginData.username) {
+      setLoginData({
+        ...loginData,
+        error_visible: true,
+        error: "enter your username and password"
+      })
+    }
+    else if (!loginData.username) {
+      setLoginData({
+        ...loginData,
+        error_visible: true,
+        error: "enter your username"
+      })
+    }
+    else if (!loginData.password) {
+      setLoginData({
+        ...loginData,
+        error_visible: true,
+        error: "enter your password"
+      })
+    }
+    else {
+      console.log("submitted login", loginData);
+      setLoginData({
+        ...loginData,
+        error_visible: false,
+      })
+      // axios.post("https://", loginData) // add endpoint for post request
+      //   .then((res) => {
+      //     console.log("submitted login:", res)
+      //     // localStorage.setItem("token", res.data.token);
+      //     //history.push("/Home");  <-- insert home page redirect
+      //   })
+      //   .catch((err) => {
+      //     console.error("something went wrong with post request: ", err);
+      //   })
+      }
+
+  };
 
     return (
-        <LoginForm>
+        <LoginForm onSubmit={submitLogin}>
         <h2>Log Me In!</h2>
             <FormDiv>
                 <label>Username&nbsp;
-                    <input name="username" type="text" />
+                    <input
+                      name="username"
+                      type="text"
+                      id="username"
+                      placeholder="Your username"
+                      onChange={changeHandler}
+                      value={loginData.username}
+                    />
                 </label>&nbsp;&nbsp;
 
                 <label>Password&nbsp;
-                    <input name="password" type="text"/>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="your password"
+                      onChange={changeHandler}
+                      value={loginData.password}
+                    />
                 </label>
+                {loginData.error_visible ? <ErrorMsgDiv>
+            <ErrorMsgP>{loginData.error}</ErrorMsgP>
+            </ErrorMsgDiv> : null}
             </FormDiv>
-            <LoginButton>Log Me In!</LoginButton>
+            <LoginButton type="submit">Log Me In!</LoginButton>
         </LoginForm>
     )
 }
+
+const ErrorMsgP = styled.p`
+  font-size: 0.9rem;
+  margin: 0 auto;
+`;
+
+const ErrorMsgDiv = styled.div`
+  background-color: #FEC1C1;
+  margin-top: 3%;
+  padding: 3% 0%;
+  border-radius: 15px;
+`;
 
 const LoginForm = styled.form`
   display: flex;
