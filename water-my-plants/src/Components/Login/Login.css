@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.loginCard {
+    max-width: 580px;
+    max-height: 490px;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 75px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+h1.loginHeader {
+    text-align: center;
+    margin-bottom: 6%;
+    color: #3556D5;
+}
+
+.loginInput {
+    margin-bottom: 3%;
+    border-color:#3556D5;
+    font-size: 1.2rem;
+}
+
+.loginButton {
+	margin: 0 auto;
+    background-color:#3556D5;
+    color: white;
+    border: none;
+    min-width: 130px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+}
+
+.error_container {
+	margin: 5% 3%;
+	padding: 2%;
+	border:2px solid  #EA9494;
+	font-size: 1.2rem;
+	font-weight:inherit;
+	display: flex;
+	justify-content: center;
+}
+
+.error_msg {
+	margin: 0 auto;
+}
