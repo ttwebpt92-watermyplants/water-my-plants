@@ -5,14 +5,18 @@ import axios from "axios";
 
 const initialState = {
   username: "",
-  password: "",
+  password: ""
+};
+
+const initialErrorState = {
   error: "",
   error_visible: false
-};
+}
 
 export default function Login (props) {
 
   const [loginData, setLoginData] = useState(initialState);
+  const [errorData, setErrorData] = useState(initialErrorState);
   const history = useHistory();
 
   const changeHandler = (event) => {
@@ -26,31 +30,32 @@ export default function Login (props) {
     event.preventDefault();
     console.log("submit");
     if (!loginData.password && !loginData.username) {
-      setLoginData({
-        ...loginData,
+      setErrorData({
+        ...errorData,
         error_visible: true,
         error: "enter your username and password"
       })
     }
     else if (!loginData.username) {
-      setLoginData({
-        ...loginData,
+      setErrorData({
+        ...errorData,
         error_visible: true,
         error: "enter your username"
       })
     }
     else if (!loginData.password) {
-      setLoginData({
-        ...loginData,
+      setErrorData({
+        ...errorData,
         error_visible: true,
         error: "enter your password"
       })
     }
     else {
       console.log("submitted login", loginData);
-      setLoginData({
-        ...loginData,
+      setErrorData({
+        ...errorData,
         error_visible: false,
+        error: ""
       })
       // axios.post("https://", loginData) // add endpoint for post request
       //   .then((res) => {
@@ -90,8 +95,8 @@ export default function Login (props) {
                       value={loginData.password}
                     />
                 </label>
-                {loginData.error_visible ? <ErrorMsgDiv>
-            <ErrorMsgP>{loginData.error}</ErrorMsgP>
+                {errorData.error_visible ? <ErrorMsgDiv>
+            <ErrorMsgP>{errorData.error}</ErrorMsgP>
             </ErrorMsgDiv> : null}
             </FormDiv>
             <LoginButton type="submit">Log Me In!</LoginButton>

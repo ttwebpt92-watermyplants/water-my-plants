@@ -4,10 +4,10 @@ import styled, { css } from 'styled-components'
 
 import './App.css';
 
-import SignupForm from './SignupForm'
+import SignupForm from './Components/SignupForm'
 import Navbar from './Navbar'
 import Homepage from './Homepage'
-import Login from './Login'
+import Login from './Components/Login'
 import AddNewPlant from './Components/AddNewPlant';
 import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
