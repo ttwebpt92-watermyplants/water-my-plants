@@ -1,13 +1,14 @@
 import React from 'react'
 import { Route, Link, Switch, NavLink } from 'react-router-dom'
-import styled, { css } from 'styled-components'
-
+import styled from 'styled-components'
+import { Container, Nav, Navbar, Card, Col } from 'react-bootstrap';
 import './App.css';
 
 import SignupForm from './SignupForm'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 import Homepage from './Homepage'
 import Login from './Login'
+// import Login from './Components/Login/Login'
 import AddNewPlant from './Components/AddNewPlant';
 import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
@@ -18,13 +19,46 @@ function App() {
 
       return (
         <MainDiv>
-          <HeaderDiv>Water My Plants</HeaderDiv>
-
+          <Container>
+          <Card >
+            {/* <Card.Body> */}
+            <h1 className="h1-main">Remember The Plants!</h1>
+            <h4 className="text-muted">A Scheduling App for Plant Care</h4>
+            {/* </Card.Body> */}
+          </Card>
+          </Container>
+        {/* Bootstrap styling -- Navbar light */}
           <NavBarDiv>
+            <Navbar>
+              <Navbar.Brand className="home-nav-btn" href="/Homepage" defaultActiveKey="/Homepage">Home</Navbar.Brand>
+              <Nav  className="mr-auto">
+                <Nav.Link className="nav-btn" href="SignupForm">Sign Up</Nav.Link>
+                <Nav.Link className="nav-btn" href="Login">Login</Nav.Link>
+              </Nav>        
+            </Navbar>
+          </NavBarDiv>
+
+          {/* Nav with pills -- bootstrap */}
+          {/* <Container>
+            <Nav variant="pills" defaultActiveKey="/Homepage">
+              <Nav.Item>
+                  <Nav.Link href="/Homepage">Home</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link href="SignupForm" eventKey="link-1">Sign Up!</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link href="Login" eventKey="link-3">Login!</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Container> */}
+
+          {/* Navbar with styled components */ }
+          {/* <NavBarDiv>
             <NavButton to='/Homepage'>Home</NavButton>
             <NavButton to='/SignupForm'>Sign Up</NavButton>
             <NavButton to='/Login'>Login</NavButton>
-          </NavBarDiv>
+          </NavBarDiv> */}
 
           <Switch>
             <Route exact path='/Homepage'>
@@ -50,13 +84,19 @@ const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 1px solid rgb(210, 210, 210);
+  // border: 1px solid rgb(210, 210, 210);
+  // box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   border-radius: 6px;
-  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 16px;
-  background-color:#6B8E23 ;
+  // background-color: #5ba35b;
 `;
+// color selections for styled components
+//5ba35b current green color
+//228B22 forest green
+//9ACD32 yellowgreen
+//8FBC8F dark seagreen
+//6B8E23 Olive drab (original color)
 
 const HeaderDiv = styled.h1`
   display: flex;
@@ -67,7 +107,7 @@ const HeaderDiv = styled.h1`
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 16px;
-  background-color: #FFEFD5;
+  // background-color: #FFEFD5;
   color: black;
 `;
 
@@ -105,12 +145,12 @@ const NavBarDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 1px solid rgb(210, 210, 210);
+  // border: 1px solid rgb(210, 210, 210);
+  // box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   border-radius: 6px;
-  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
-  margin: 16px 8px;
-  padding: 16px;
-  background-color: white;
+  margin: 6px 8px;
+  padding: 0px;
+  // background-color: white;
 `;
 
 const NavButton = styled(NavLink)`

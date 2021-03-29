@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+// import { Container } from 'bootstrap'
+import { Container, Nav } from 'react-bootstrap';
 
 export default function Navbar() {
 
@@ -15,7 +17,26 @@ export default function Navbar() {
             <NavButton>Profile</NavButton>
             <NavButton>Log Out</NavButton>
             <NavButton>Help</NavButton>
+            
+            {/* Bootstrap Styling */}
+
+            <Container>
+                <Nav variant="pills" defaultActiveKey="/Homepage">
+                    <Nav.Item>
+                        <Nav.Link href="/Homepage">Home</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="PlantsList" eventKey="link-1">My Plants</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="Users" eventKey="link-3">Profile</Nav.Link>
+                    </Nav.Item>
+                </Nav>
+            </Container>
         </NavBarDiv>
+
+
+
     )
 }
 
