@@ -4,11 +4,12 @@ import styled from 'styled-components'
 import { Container, Nav, Navbar, Card, Col } from 'react-bootstrap';
 import './App.css';
 
-import SignupForm from './SignupForm'
+import SignupForm from './Components/SignupForm'
+// Navbar component needs to be renamed slightly so as not to conflict with bootstrap
+// identifier
 // import Navbar from './Navbar'
 import Homepage from './Homepage'
-import Login from './Login'
-// import Login from './Components/Login/Login'
+import Login from './Components/Login'
 import AddNewPlant from './Components/AddNewPlant';
 import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
@@ -21,13 +22,10 @@ function App() {
         <MainDiv>
           <Container>
           <Card >
-            {/* <Card.Body> */}
             <h1 className="h1-main">Remember The Plants!</h1>
             <h4 className="text-muted">A Scheduling App for Plant Care</h4>
-            {/* </Card.Body> */}
           </Card>
           </Container>
-        {/* Bootstrap styling -- Navbar light */}
           <NavBarDiv>
             <Navbar>
               <Navbar.Brand className="home-nav-btn" href="/Homepage" defaultActiveKey="/Homepage">Home</Navbar.Brand>
@@ -38,27 +36,6 @@ function App() {
             </Navbar>
           </NavBarDiv>
 
-          {/* Nav with pills -- bootstrap */}
-          {/* <Container>
-            <Nav variant="pills" defaultActiveKey="/Homepage">
-              <Nav.Item>
-                  <Nav.Link href="/Homepage">Home</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                  <Nav.Link href="SignupForm" eventKey="link-1">Sign Up!</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                  <Nav.Link href="Login" eventKey="link-3">Login!</Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Container> */}
-
-          {/* Navbar with styled components */ }
-          {/* <NavBarDiv>
-            <NavButton to='/Homepage'>Home</NavButton>
-            <NavButton to='/SignupForm'>Sign Up</NavButton>
-            <NavButton to='/Login'>Login</NavButton>
-          </NavBarDiv> */}
 
           <Switch>
             <Route exact path='/Homepage'>
@@ -97,6 +74,8 @@ const MainDiv = styled.div`
 //9ACD32 yellowgreen
 //8FBC8F dark seagreen
 //6B8E23 Olive drab (original color)
+
+// Background color, border and box-shadow has been commented on MainDiv and NavBarDiv, and background color has been commented on HeaderDiv
 
 const HeaderDiv = styled.h1`
   display: flex;

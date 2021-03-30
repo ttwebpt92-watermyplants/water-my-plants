@@ -9,13 +9,17 @@ const initialState = {
     username:"",
     password:"",
     phone_number:"",
+};
+
+const initialErrorState = {
     error_msg:"",
     error_visible: false
-};
+}
 
 export default function SignupForm(props) {
 
-    const [ newUser, setNewUser] = useState(initialState);
+    const [newUser, setNewUser] = useState(initialState);
+    const [errorData, setErrorData] = useState(initialErrorState);
     const history = useHistory();
 
     const changeHandler = (event) => {
@@ -33,31 +37,31 @@ export default function SignupForm(props) {
         let phoneNumberLength = newUser.phone_number.length;
 
         if (usernameLength < 4) {
-            setNewUser({
-                ...newUser,
+            setErrorData({
+                ...errorData,
                 error_visible:true,
                 error_msg:"username must be at least 4 charachers"
-            });
+            })
         }
         else if (passwordLength < 6) {
-            setNewUser({
-                ...newUser,
+            setErrorData({
+                ...errorData,
                 error_visible:true,
                 error_msg:"password must be at least 6 characters"
-            });
+            })
         }
         else if (phoneNumberLength !== 10) {
-            setNewUser({
-                ...newUser,
+            setErrorData({
+                ...errorData,
                 error_visible:true,
                 error_msg:"invalid phone number"
             });
         }
         else {
-            setNewUser({
-                ...newUser,
+            setErrorData({
+                ...errorData,
                 error_visible:false,
-                error_msg: ""
+                error_msg:""
             });
             console.log("success: ", newUser);
         }
@@ -108,13 +112,10 @@ export default function SignupForm(props) {
                         onChange={changeHandler}
                     />
                 </label>
-                {newUser.error_visible ? <ErrorMsgDiv>
-            <ErrorMsgP>{newUser.error_msg}</ErrorMsgP>
+                {errorData.error_visible ? <ErrorMsgDiv>
+            <ErrorMsgP>{errorData.error_msg}</ErrorMsgP>
             </ErrorMsgDiv> : null}
             </FormDiv>
-            {/* <SubmitButton type='submit'>Submit!</SubmitButton> */}
-            {/* Added button with react bootstrap styling */}
-
             <Button variant="warning" size="lg" type="submit">Submit</Button>
 
         </MainForm>
@@ -159,17 +160,3 @@ const FormDiv = styled.div`
   padding: 26px;
   background-color: white;
 `;
-
-const SubmitButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  border: 1px solid teal;
-  border-radius: 6px;
-  border-color: huntergreen;
-  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
-  margin: 6px 6px;
-  padding: 16px;
-  max-width: 50%;
-  background-color: #75ec73;
-  color: bold green;
-  `
