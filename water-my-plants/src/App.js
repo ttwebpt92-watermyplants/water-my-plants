@@ -38,9 +38,9 @@ function App() {
             </Route>
           </Switch> */}
 
-        <AddNewPlant/>
-        {/* <PlantsList/>
-        <UpdateUser/> */}
+
+        <PlantsList/>
+        {/* <UpdateUser/> */}
 
         </MainDiv>
       )
