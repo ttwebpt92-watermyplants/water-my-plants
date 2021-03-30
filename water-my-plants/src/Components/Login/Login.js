@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Button, Form, Input, Card, Container, Col } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.css'
-import Navbar from "../../Navbar";
+import NavBar from "../../NavBar";
 import "./Login.css";
 
 const initialState = {
@@ -69,7 +69,7 @@ const Login = (props) => {
 
   return (
     <>
-	<Navbar />
+	<NavBar />
       <Container className="loginContainer">
         <Col>
         <Card className="loginCard">
