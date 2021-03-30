@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React,{ useState } from 'react'
 import { useHistory } from 'react-router-dom';
+import { Button } from 'react-bootstrap'
 import styled from 'styled-components'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const initialState = {
     username:"",
@@ -114,7 +116,8 @@ export default function SignupForm(props) {
             <ErrorMsgP>{errorData.error_msg}</ErrorMsgP>
             </ErrorMsgDiv> : null}
             </FormDiv>
-            <SubmitButton type='submit'>Submit!</SubmitButton>
+            <Button variant="warning" size="lg" type="submit">Submit</Button>
+
         </MainForm>
     )
 }
@@ -157,17 +160,3 @@ const FormDiv = styled.div`
   padding: 26px;
   background-color: white;
 `;
-
-const SubmitButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  border: 1px solid teal;
-  border-radius: 6px;
-  border-color: huntergreen;
-  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
-  margin: 6px 6px;
-  padding: 16px;
-  max-width: 50%;
-  background-color: #75ec73;
-  color: bold green;
-  `

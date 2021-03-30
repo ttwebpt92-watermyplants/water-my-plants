@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Button } from 'react-bootstrap'
+
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -99,7 +101,9 @@ export default function Login (props) {
             <ErrorMsgP>{errorData.error}</ErrorMsgP>
             </ErrorMsgDiv> : null}
             </FormDiv>
-            <LoginButton type="submit">Log Me In!</LoginButton>
+
+            {/* Added login button with react bootstrap styling */}
+            <Button variant="warning" size="lg" type="submit">Log Me In!</Button>
         </LoginForm>
     )
 }
@@ -139,18 +143,4 @@ const FormDiv = styled.div`
   margin: 16px 8px;
   padding: 26px;
   background-color: white;
-`;
-
-const LoginButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  border: 1px solid teal;
-  border-radius: 6px;
-  border-color: huntergreen;
-  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
-  margin: 6px 6px;
-  padding: 16px;
-  max-width: 50%;
-  background-color: #75ec73;
-  color: bold green;
 `;
