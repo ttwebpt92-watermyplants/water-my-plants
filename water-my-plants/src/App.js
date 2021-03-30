@@ -7,7 +7,7 @@ import './App.css';
 import SignupForm from './Components/SignupForm'
 // Navbar component needs to be renamed slightly so as not to conflict with bootstrap
 // identifier
-// import Navbar from './Navbar'
+import NavBar from './NavBar'
 import Homepage from './Homepage'
 import Login from './Components/Login'
 import AddNewPlant from './Components/AddNewPlant';
