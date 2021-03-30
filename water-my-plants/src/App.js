@@ -36,6 +36,8 @@ function App() {
             </Navbar>
           </NavBarDiv>
 
+          {/* Inner-App NavBar that is displayed after a user successfully logs in */}
+          {/* <NavBar /> */}
 
           <Switch>
             <Route exact path='/Homepage'>
