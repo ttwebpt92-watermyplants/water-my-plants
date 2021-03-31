@@ -59,7 +59,7 @@ export default function Login (props) {
         error_visible: false,
         error: ""
       })
-      axios.post('/users/login', data) // add endpoint for post request
+      axios.post('/users/login', loginData) // add endpoint for post request
        .then((res) => {
           console.log("submitted login:", res)
           localStorage.setItem("token", res.data.token);
