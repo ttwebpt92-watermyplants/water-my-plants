@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
+import styled from 'styled-components';
+import img from '../images/flowers.jpeg';
 
 
 function AddNewPlant(props) {
@@ -35,24 +37,55 @@ function AddNewPlant(props) {
 
     return (
         <div>
-            <nav className='nav'>
-                <h1 className='header-logo'>WMP</h1>
-                <Link to={'/'} className='signup'>Home</Link>
-                <Link to={''} className='profile'>Profile</Link>
-                <Link to={''} className='plantsList'>My Plants</Link>
-                <Link to={''} className='logout'>Logout</Link>
-            </nav>
-            <h1 className='h-add-plant'>
+            <NavBarDiv className='nav'>
+                <h1 className='header-logo'></h1>
+                <LinkButton to={'/'} className='signup'>Home</LinkButton>
+                <LinkButton to={''} className='profile'>Profile</LinkButton>
+                <LinkButton to={''} className='plantsList'>My Plants</LinkButton>
+                <LinkButton to={''} className='logout'>Logout</LinkButton>
+            </NavBarDiv>
+            <Box>
+            <Header className='h-add-plant'>
                 Add New Plant
-            </h1>
-            <form onSubmit={handleSubmit}>
+            </Header>
+            <FormDiv onSubmit={handleSubmit}>
                 <input type='text' name='nickName' placeholder='Nickname' value={newPlant.nickName} onChange={handleChange} />
                 <input type='text' name='species' placeholder='Species' value={newPlant.species} onChange={handleChange} />
                 <input type='text' name='waterFrequency' placeholder='Water Frequency' value={newPlant.waterFrequency} onChange={handleChange} />
-            </form>
+            </FormDiv>
             <button type='submit'>Add New Plant</button>
+            </Box>
         </div>
     )
 };
 
+
+///// Styling /////
+const NavBarDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  margin: 16px 8px;
+  padding: 16px;
+  background-color: white;
+`
+const LinkButton = styled(NavLink) `
+    text-decoration: none;
+    color:black;
+`
+const Header = styled.h1 `
+    background-color: #FFEFD5;
+`
+const FormDiv = styled.form `
+    background-color: #6B8F50;
+    padding: 10%;
+    border: 2px solid black;
+    margin: 17%;
+`
+const Box = styled.div`
+    background-image: url(${img});
+`
 export default AddNewPlant;
