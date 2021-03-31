@@ -25,7 +25,7 @@ function AddNewPlant(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
         axios
-        .post('', newPlant)
+        .post('https://alc-water-my-plants.herokuapp.com/api/plants', newPlant)
         .then(result => {
             console.log(result.data)
             localStorage.setItem('token', result.data.token) 

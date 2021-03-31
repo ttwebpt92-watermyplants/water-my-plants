@@ -59,15 +59,15 @@ export default function Login (props) {
         error_visible: false,
         error: ""
       })
-      // axios.post("https://", loginData) // add endpoint for post request
-      //   .then((res) => {
-      //     console.log("submitted login:", res)
-      //     // localStorage.setItem("token", res.data.token);
-      //     //history.push("/Home");  <-- insert home page redirect
-      //   })
-      //   .catch((err) => {
-      //     console.error("something went wrong with post request: ", err);
-      //   })
+      axios.post('/users/login', data) // add endpoint for post request
+       .then((res) => {
+          console.log("submitted login:", res)
+          localStorage.setItem("token", res.data.token);
+         history.push("/Homepage"); // <-- insert home page redirect
+        })
+      .catch((err) => {
+         console.error("something went wrong with post request: ", err);
+       })
       }
 
   };

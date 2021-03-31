@@ -9,7 +9,7 @@ export default function Users() {
 
   useEffect(() => {
     axiosWithAuth()
-      .get('')
+      .get('/users')
       .then(result => {
         console.log(result.data);
         setUsers(result.data);
@@ -22,7 +22,7 @@ export default function Users() {
   const handleDelete = (event, id) => {
     event.preventDefault()
     axios
-      .delete('')
+      .delete('/users/id')
       .then(result => {
         console.log('')
       })
@@ -35,10 +35,10 @@ export default function Users() {
     <div className='profile'>
 <nav className='nav'>
 
-        <Link to={''} className='home-nav'>Home</Link>
-        <Link to={''} className='plantsList'>My Plants</Link>
-        <Link to={''} className='addNewPlant'>Add New Plant</Link>
-        <Link to={''} className='logout'>Logout</Link>
+        <Link to={'/Homepage'} className='home-nav'>Home</Link>
+        <Link to={'/PlantsList'} className='plantsList'>My Plants</Link>
+        <Link to={'/AddNewPlant'} className='addNewPlant'>Add New Plant</Link>
+        <Link to={'/Homepage'} className='logout'>Logout</Link>
       </nav>
       <h1> Users </h1>
       <div >

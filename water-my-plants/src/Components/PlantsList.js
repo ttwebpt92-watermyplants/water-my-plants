@@ -9,7 +9,7 @@ export default function PlantsList() {
 
   useEffect(() => {
     axiosWithAuth()
-      .get('')
+      .get('/plants')
       .then(response => {
         console.log(response.data);
         setPlants(response.data);
@@ -22,12 +22,12 @@ export default function PlantsList() {
   return (
     <div className='plants-list'>
 <NavBarDiv className='nav'>
-                <LinkButton to={'/'} className='signup'>Home</LinkButton>
-                <LinkButton to={''} className='signup'>Sign Up</LinkButton>
-                <LinkButton to={''} className='profile'>Profile</LinkButton>
-                <LinkButton to={''} className='login'>Login</LinkButton>
-                <LinkButton to={''} className='plantsList'>My Plants</LinkButton>
-                <LinkButton to={''} className='addNewPlant'>Add New Plant</LinkButton>
+                <LinkButton to={'/Homepage'} className='signup'>Home</LinkButton>
+                <LinkButton to={'/SignUpForm'} className='signup'>Sign Up</LinkButton>
+                <LinkButton to={'/Users'} className='profile'>Profile</LinkButton>
+                <LinkButton to={'/Login'} className='login'>Login</LinkButton>
+                <LinkButton to={'/PlantsList'} className='plantsList'>My Plants</LinkButton>
+                <LinkButton to={'/AddNewPlant'} className='addNewPlant'>Add New Plant</LinkButton>
             </NavBarDiv>
       <h1> My Plants </h1>
       <Box>
@@ -37,7 +37,7 @@ export default function PlantsList() {
           <div>Nickname: {plant.nickname}</div>
           <div>Species: {plant.species}</div>
           <div>H2O Frequency: {plant.h2oFrequency}</div>
-          <Link className='update-user' to={``}>Edit</Link>
+          <Link className='update-user' to={`/users/${plant.id}`}>Edit</Link>
         </div>
         ))}
       </Box>

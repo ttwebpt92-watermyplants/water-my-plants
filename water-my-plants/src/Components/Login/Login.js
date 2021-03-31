@@ -54,15 +54,15 @@ const Login = (props) => {
         ...loginData,
         error_visible: false,
       })
-      // axios.post("https://", loginData) // add endpoint for post request
-      //   .then((res) => {
-      //     console.log("submitted login:", res)
-      //     // localStorage.setItem("token", res.data.token);
-      //     //history.push("/Home");  <-- insert home page redirect
-      //   })
-      //   .catch((err) => {
-      //     console.error("something went wrong with post request: ", err);
-      //   })
+       axios.post("/users/login", loginData) // add endpoint for post request
+     .then((res) => {
+          console.log("submitted login:", res)
+           localStorage.setItem("token", res.data.token);
+         history.push("/Homepage"); // <-- insert home page redirect
+        })
+        .catch((err) => {
+          console.error("something went wrong with post request: ", err);
+        })
       }
 
   };

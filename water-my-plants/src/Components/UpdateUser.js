@@ -29,7 +29,7 @@ function UpdateUser(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
         axios
-        .put('', user) // sends a post request to the server and sends data to the signin endpoint
+        .put('https://alc-water-my-plants.herokuapp.com/user/id', user) // sends a post request to the server and sends data to the signin endpoint
         .then(result => {
               //props.history.push('/users')   //reroute back to users component
               console.log(result.data)
@@ -43,12 +43,12 @@ function UpdateUser(props) {
         <div>
 <NavBarDiv className='nav'>
 
-                <LinkButton to={''} className='signup'>Home</LinkButton>
-                <LinkButton to={''} className='signup'>Sign Up</LinkButton>
-                <LinkButton to={''} className='profile'>Profile</LinkButton>
-                <LinkButton to={''} className='login'>Login</LinkButton>
-                <LinkButton to={''} className='plantsList'>My Plants</LinkButton>
-                <LinkButton to={''} className='addNewPlant'>Add New Plant</LinkButton>
+                <LinkButton to={'/Homepage'} className='signup'>Home</LinkButton>
+                <LinkButton to={'/SignupForm'} className='signup'>Sign Up</LinkButton>
+                <LinkButton to={'/Users'} className='profile'>Profile</LinkButton>
+                <LinkButton to={'/Login'} className='login'>Login</LinkButton>
+                <LinkButton to={'/PlantsList'} className='plantsList'>My Plants</LinkButton>
+                <LinkButton to={'/AddNewPlant'} className='addNewPlant'>Add New Plant</LinkButton>
             </NavBarDiv>
 
 
