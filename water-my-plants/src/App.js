@@ -20,7 +20,7 @@ function App() {
         <MainDiv>
           <HeaderDiv>Water My Plants</HeaderDiv>
 
-          {/* <NavBarDiv>
+          <NavBarDiv>
             <NavButton to='/Homepage'>Home</NavButton>
             <NavButton to='/SignupForm'>Sign Up</NavButton>
             <NavButton to='/Login'>Login</NavButton>
@@ -36,10 +36,8 @@ function App() {
             <Route path='/Login'>
               <Login/>
             </Route>
-          </Switch> */}
+          </Switch>
 
-
-        <UpdateUser/>
 
         </MainDiv>
       )
