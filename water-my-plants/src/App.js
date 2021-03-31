@@ -39,8 +39,7 @@ function App() {
           </Switch> */}
 
 
-        <PlantsList/>
-        {/* <UpdateUser/> */}
+        <UpdateUser/>
 
         </MainDiv>
       )

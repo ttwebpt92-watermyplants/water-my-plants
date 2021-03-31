@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
+import styled from 'styled-components';
 
 
 
@@ -40,27 +41,55 @@ function UpdateUser(props) {
 
     return (
         <div>
-<nav className='nav'>
+<NavBarDiv className='nav'>
 
-                <Link to={''} className='signup'>Home</Link>
-                <Link to={''} className='signup'>Sign Up</Link>
-                <Link to={''} className='profile'>Profile</Link>
-                <Link to={''} className='login'>Login</Link>
-                <Link to={''} className='plantsList'>My Plants</Link>
-                <Link to={''} className='addNewPlant'>Add New Plant</Link>
-            </nav>
+                <LinkButton to={''} className='signup'>Home</LinkButton>
+                <LinkButton to={''} className='signup'>Sign Up</LinkButton>
+                <LinkButton to={''} className='profile'>Profile</LinkButton>
+                <LinkButton to={''} className='login'>Login</LinkButton>
+                <LinkButton to={''} className='plantsList'>My Plants</LinkButton>
+                <LinkButton to={''} className='addNewPlant'>Add New Plant</LinkButton>
+            </NavBarDiv>
 
 
-            <h1 className='h-update-profile'>
+            <Header className='h-update-profile'>
                 Update User
-            </h1>
-            <form onSubmit={handleSubmit}>
+            </Header>
+            <FormDiv onSubmit={handleSubmit}>
                 <input type='text' name='name' placeholder='Name' value={user.name} onChange={handleChange} />
                 <input type='text' name='job' placeholder='Job' value={user.job} onChange={handleChange} />
                 <button type='submit'>Save</button>
-            </form>
+            </FormDiv>
         </div>
     )
 };
+
+
+const NavBarDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  margin: 16px 8px;
+  padding: 16px;
+  background-color: white;
+`
+const LinkButton = styled(NavLink) `
+    text-decoration: none;
+    color:black;
+`
+const Header = styled.h1 `
+    background-color: #FFEFD5;
+`
+const FormDiv = styled.form `
+    background-color: #6B8F50;
+    padding: 10%;
+    border: 2px solid black;
+    margin: 5%;
+`
+
+
 
 export default UpdateUser;
