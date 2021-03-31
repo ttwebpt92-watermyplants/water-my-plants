@@ -15,6 +15,7 @@ import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
 import Profile from './Components/Users';
 import UpdateUser from './Components/UpdateUser';
+import Logout from './Components/Logout';
 
 function App() {
 
