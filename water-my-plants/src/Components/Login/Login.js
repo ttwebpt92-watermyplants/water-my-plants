@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Button, Form, Input, Card, Container, Col } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.css'
-import NavBar from "../../NavBar";
+import NavBar from "../../Navbar";
 import "./Login.css";
 
 const initialState = {
