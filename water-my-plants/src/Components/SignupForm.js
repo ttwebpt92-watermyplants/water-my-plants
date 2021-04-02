@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 const initialState = {
     username:"",
     password:"",
-    phone_number:"",
+    phone:"",
 };
 
 const initialErrorState = {
@@ -34,7 +34,7 @@ export default function SignupForm(props) {
         console.log("form submitted: ", newUser);
         let usernameLength = newUser.username.length;
         let passwordLength = newUser.password.length;
-        let phoneNumberLength = newUser.phone_number.length;
+        let phoneNumberLength = newUser.phone.length;
 
         if (usernameLength < 4) {
             setErrorData({
@@ -63,17 +63,16 @@ export default function SignupForm(props) {
                 error_visible:false,
                 error_msg:""
             });
-            console.log("success: ", newUser);
+            console.log("post obj body: ", newUser);
+            axios.post("https://alc-water-my-plants.herokuapp.com/api/users/register", newUser) //<-- need endpoint for post request
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
         }
-    //     axios.post("http://", newUser) <-- need endpoint for post request
-    //         .then((res) => {
-    //             console.log(res);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    // };
-    }
+    };
 
     return (
         <MainForm onSubmit={submitForm}>
@@ -93,11 +92,11 @@ export default function SignupForm(props) {
 
                 <label>Phone Number&nbsp;
                     <input
-                        name="phone_number"
+                        name="phone"
                         type="text"
-                        id="phone_number"
+                        id="phone"
                         placeholder="Example:1234567890"
-                        value={newUser.phone_number}
+                        value={newUser.phone}
                         onChange={changeHandler}
                     />
                 </label>&nbsp;&nbsp;
