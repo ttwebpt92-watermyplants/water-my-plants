@@ -69,11 +69,11 @@ export default function Login (props) {
             setUser({
               username: loginData.username
             });
-            history.push("/Homepage");
+            history.push("/PlantsList");
             // console.log("username was same as before or not created yet")
           }
           else {
-            history.push("/Homepage");
+            history.push("/PlantsList");
             // console.log("username wasnt found in localstorage, setted up new one");
           }
         })
