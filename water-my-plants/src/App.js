@@ -3,6 +3,7 @@ import { Route, Link, Switch, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Container, Nav, Navbar, Card, Col } from 'react-bootstrap';
 import './App.css';
+import { useHistory } from "react-router-dom";
 
 import SignupForm from './Components/SignupForm'
 // Navbar component needs to be renamed slightly so as not to conflict with bootstrap
@@ -17,8 +18,27 @@ import Profile from './Components/Users';
 import UpdateUser from './Components/UpdateUser';
 import Logout from './Components/Logout';
 import { UserProvider } from './utils/UserContext';
+import axios from 'axios';
 
 function App() {
+
+  const history = useHistory();
+  const logout = () => {
+    localStorage.removeItem("username");
+    history.push('/login');
+    // window.location.reload(false)
+    // setTimeout(
+    //   function(){
+    //     history.push('/login');
+    //   }, 5)
+    // axios.get("https://alc-water-my-plants.herokuapp.com/api/users/logout")// axios call for ending session gives me 500 error
+    //   .then((res) => {
+    //     console.log("session quited successfully")
+    //   })
+    //   .catch((err) => {
+    //     console.log("cannot finish user's session")
+    //   })
+  }
 
   const [user, setUser] = useState([{
     username: localStorage.getItem('username'),
@@ -40,6 +60,7 @@ function App() {
               <Nav  className="mr-auto">
                 <Nav.Link className="nav-btn" href="SignupForm">Sign Up</Nav.Link>
                 <Nav.Link className="nav-btn" href="Login">Login</Nav.Link>
+                {(localStorage.getItem('username') ? <Nav.Link className="nav-btn" onClick={logout}>Logout</Nav.Link> : null)}
               </Nav>        
             </Navbar>
           </NavBarDiv>
@@ -66,7 +87,7 @@ function App() {
         <Route exact path='Logout' component={Logout}>
           <Logout />
         </Route>
-        <Route path='/login' component={Login}>
+        <Route path='/Login' component={Login}>
           <Login />
         </Route>
         <Route exact path='/SignupForm' component={AddNewPlant}>
