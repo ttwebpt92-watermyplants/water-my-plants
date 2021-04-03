@@ -53,21 +53,21 @@ export default function Login (props) {
       })
     }
     else {
-      console.log("submitted login", loginData);
+      console.log("submitted , post request going next", loginData);
       setErrorData({
         ...errorData,
         error_visible: false,
         error: ""
       })
-      // axios.post("https://", loginData) // add endpoint for post request
-      //   .then((res) => {
-      //     console.log("submitted login:", res)
-      //     // localStorage.setItem("token", res.data.token);
-      //     //history.push("/Home");  <-- insert home page redirect
-      //   })
-      //   .catch((err) => {
-      //     console.error("something went wrong with post request: ", err);
-      //   })
+      axios.post("https://alc-water-my-plants.herokuapp.com/api/users/login", loginData) // add endpoint for post request
+        .then((res) => {
+          console.log("submitted login:", res)
+          // localStorage.setItem("token", res.data.token);
+          //history.push("/Home");  <-- insert home page redirect
+        })
+        .catch((err) => {
+          console.error("something went wrong with post request: ", err);
+        })
       }
 
   };
@@ -84,7 +84,7 @@ export default function Login (props) {
                       placeholder="Your username"
                       onChange={changeHandler}
                       value={loginData.username}
-                    />
+                    /> 
                 </label>&nbsp;&nbsp;
 
                 <label>Password&nbsp;
