@@ -13,7 +13,7 @@ function UpdatePlant(props) {
 
     useEffect(() => {
         axiosWithAuth()
-        .get(``)
+        .get(`/plants/${props.match.params.id}`)
         .then(result => {
             setPlant(result.data)
         })
@@ -32,7 +32,7 @@ function UpdatePlant(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
         axiosWithAuth()
-        .put(``, plant)
+        .put(`/plants/${plant.id}`, plant)
         .then(result => {
             props.history.push('')
         })
@@ -43,14 +43,15 @@ function UpdatePlant(props) {
 
     return (
         <div>
-{/* <nav className='nav'>
+            <nav className='nav'>
 
-                <Link to={''} className='signup'>Home</Link>
-                <Link to={''} className='signup'>Sign Up</Link>
-                <Link to={''} className='profile'>Profile</Link>
-                <Link to={''} className='plantsList'>My Plants</Link>
-                <Link to={''} className='addNewPlant'>Add New Plant</Link>
-            </nav> */}
+                <Link to={'/'} className='signup'>Home</Link>
+                <Link to={'/SignupForm'} className='signup'>Sign Up</Link>
+                <Link to={'/profile'} className='profile'>Profile</Link>
+                <Link to={'/plantsList'} className='plantsList'>My Plants</Link>
+                <Link to={'/addNewPlant'} className='addNewPlant'>Add New Plant</Link>
+                <Link to={'/logout'} className='logout'>Logout</Link>
+            </nav>
             <p>
                 Update Plant
             </p>

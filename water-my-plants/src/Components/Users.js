@@ -9,7 +9,7 @@ export default function Users() {
 
   useEffect(() => {
     axiosWithAuth()
-      .get('')
+      .get('/users')
       .then(result => {
         console.log(result.data);
         setUsers(result.data);
@@ -22,7 +22,7 @@ export default function Users() {
   const handleDelete = (event, id) => {
     event.preventDefault()
     axios
-      .delete('')
+      .delete('https://alc-water-my-plants.herokuapp.com/api/users/:id')
       .then(result => {
         console.log('')
       })
@@ -34,13 +34,13 @@ export default function Users() {
   return (
     <Container>
     <Card className='profile'>
-{/* <nav className='nav'>
+    <nav className='nav'>
 
-        <Link to={''} className='home-nav'>Home</Link>
-        <Link to={''} className='plantsList'>My Plants</Link>
-        <Link to={''} className='addNewPlant'>Add New Plant</Link>
-        <Link to={''} className='logout'>Logout</Link>
-      </nav> */}
+        <Link to={'/'} className='home-nav'>Home</Link>
+        <Link to={'/plants'} className='plantsList'>My Plants</Link>
+        <Link to={'/addNewPlant'} className='addNewPlant'>Add New Plant</Link>
+        <Link to={'/logout'} className='logout'>Logout</Link>
+      </nav>
       <h1> Users </h1>
       <div >
         {users.map(user => (

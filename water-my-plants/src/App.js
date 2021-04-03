@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Link, Switch, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Container, Nav, Navbar, Card, Col } from 'react-bootstrap';
@@ -15,10 +15,18 @@ import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
 import Profile from './Components/Users';
 import UpdateUser from './Components/UpdateUser';
+import Logout from './Components/Logout';
+import { UserProvider } from './utils/UserContext';
 
 function App() {
 
+  const [user, setUser] = useState([{
+    username: localStorage.getItem('username'),
+    user_id: localStorage.getItem("user_id")
+  }]);
+
       return (
+        <UserProvider value={{user, setUser}}>
         <MainDiv>
           <Container>
           <Card >
@@ -48,19 +56,38 @@ function App() {
           </div>
 
           <Switch>
-            <Route exact path='/Homepage'>
-              <Homepage/>
-            </Route>
-            <Route path='/SignupForm'>
-              <SignupForm/>
-            </Route>
-            <Route path='/Login'>
-              <Login/>
-            </Route>
+          <Route exact path='/addNewPlant' component={AddNewPlant}>
+          <AddNewPlant />
+        </Route>
+        <Route exact path='/plants/:id' component={UpdatePlant}>
+          <UpdatePlant />
+        </Route>
+        <Route exact path='/plants' component={PlantsList}>
+          <PlantsList />
+        </Route>
+        <Route exact path='/users/:id' component={UpdateUser}>
+          <UpdateUser />
+        </Route>
+        <Route exact path='/users' component={Profile}>
+          <Profile />
+        </Route>
+        <Route exact path='Logout' component={Logout}>
+          <Logout />
+        </Route>
+        <Route path='/login' component={Login}>
+          <Login />
+        </Route>
+        <Route exact path='/SignupForm' component={AddNewPlant}>
+          <SignupForm />
+        </Route>
+        <Route exact path='/Homepage' component={Homepage}>
+          <Homepage />
+        </Route>
           </Switch>
 
 
         </MainDiv>
+       </UserProvider>
       )
 }
 

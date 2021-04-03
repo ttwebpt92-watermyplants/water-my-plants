@@ -11,7 +11,7 @@ export default function PlantsList() {
 
   useEffect(() => {
     axiosWithAuth()
-      .get('')
+      .get('/plants')
       .then(response => {
         console.log(response.data);
         setPlants(response.data);
@@ -22,17 +22,17 @@ export default function PlantsList() {
   }, []);
 
   return (
-    <Container className='plants-list'>
+    <Container>
       <Card>
-{/* <NavBarDiv className='nav'>
-                <LinkButton to={'/'} className='signup'>Home</LinkButton>
-                <LinkButton to={''} className='signup'>Sign Up</LinkButton>
-                <LinkButton to={''} className='profile'>Profile</LinkButton>
-                <LinkButton to={''} className='login'>Login</LinkButton>
-                <LinkButton to={''} className='plantsList'>My Plants</LinkButton>
-                <LinkButton to={''} className='addNewPlant'>Add New Plant</LinkButton>
-            </NavBarDiv> */}
-      <h1> My Plants </h1>
+    <div className='plants-list'>
+    <NavBarDiv className='nav'>
+        <Link to={'/'} className='signup'>Home</Link>
+        <Link to={'/users'} className='profile'>Profile</Link>
+        <Link to={'/addNewPlant'} className='addNewPlant'>Add New Plant</Link>
+        <Link to={'/logout'} className='logout'>Logout</Link>
+      </NavBarDiv>
+ 
+       <h1> My Plants </h1>
       <Box>
         {plants.map(plant => (
           <div key={plant.id} className='plant-card'>
@@ -44,8 +44,9 @@ export default function PlantsList() {
         </div>
         ))}
       </Box>
-      </Card>    
-    </Container>
+      </div>
+      </Card>   
+      </Container>
   );
 
 }
