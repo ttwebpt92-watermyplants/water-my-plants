@@ -15,6 +15,7 @@ import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
 import Profile from './Components/Users';
 import UpdateUser from './Components/UpdateUser';
+import Logout from './components/Logout';
 
 function App() {
 
@@ -55,7 +56,9 @@ function App() {
         <Route exact path='/users' component={Profile}>
           <Profile />
         </Route>
-
+        <Route exact path='Logout' component={Logout}>
+          <Logout />
+        </Route>
         <Route path='/login' component={Login}>
           <Login />
         </Route>
