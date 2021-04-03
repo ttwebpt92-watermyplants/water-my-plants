@@ -47,7 +47,7 @@ function App() {
           {/* Inner-App NavBar that is displayed after a user successfully logs in */}
           <div> 
             { 
-              localStorage.getItem('token') &&            
+              localStorage.getItem('username') &&       
               // this.state.loggedIn && 
               <div>
               <NavBar />

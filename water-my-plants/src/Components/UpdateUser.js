@@ -41,7 +41,9 @@ function UpdateUser(props) {
 
     return (
         <div>
-<NavBarDiv className='nav'>
+      {/* Commented hard-coded navbar as there is a navbar component being used */}
+
+{/* <NavBarDiv className='nav'>
 
                 <LinkButton to={'/'} className='signup'>Home</LinkButton>
                 <LinkButton to={'/signupForm'} className='signup'>Sign Up</LinkButton>
@@ -50,7 +52,7 @@ function UpdateUser(props) {
                 <LinkButton to={'/plants'} className='plantsList'>My Plants</LinkButton>
                 <LinkButton to={'/addNewPlant'} className='addNewPlant'>Add New Plant</LinkButton>
                 <LinkButton to={'/logout'} className='logout'>Logout</LinkButton>
-            </NavBarDiv>
+            </NavBarDiv> */}
 
 
             <Header className='h-update-profile'>

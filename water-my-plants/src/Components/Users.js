@@ -34,13 +34,16 @@ export default function Users() {
   return (
     <Container>
     <Card className='profile'>
-    <nav className='nav'>
+    
+    {/* Commented hard-coded navbar as there is a navbar component being used */}
+
+    {/* <nav className='nav'>
 
         <Link to={'/'} className='home-nav'>Home</Link>
         <Link to={'/plants'} className='plantsList'>My Plants</Link>
         <Link to={'/addNewPlant'} className='addNewPlant'>Add New Plant</Link>
         <Link to={'/logout'} className='logout'>Logout</Link>
-      </nav>
+      </nav> */}
       <h1> Users </h1>
       <div >
         {users.map(user => (

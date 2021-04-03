@@ -37,13 +37,15 @@ function AddNewPlant(props) {
 
     return (
         <div>
-            <NavBarDiv className='nav'>
+            {/* Commented hard-coded navbar as there is a navbar component being used */}
+
+            {/* <NavBarDiv className='nav'>
 
                 <LinkButton to={'/'} className='signup'>Home</LinkButton>
                 <Link to={'/users'} className='profile'>Profile</Link>
                 <Link to={'/plantsList'} className='plantsList'>My Plants</Link>
                 <Link to={'/logout'} className='logout'>Logout</Link>
-            </NavBarDiv>
+            </NavBarDiv> */}
 
             <Box>
             <Header className='h-add-plant'>
