@@ -15,7 +15,7 @@ import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
 import Profile from './Components/Users';
 import UpdateUser from './Components/UpdateUser';
-import Logout from './components/Logout';
+import Logout from './Components/Logout';
 import { UserProvider } from './utils/UserContext';
 
 function App() {
