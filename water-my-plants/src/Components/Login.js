@@ -62,8 +62,8 @@ export default function Login (props) {
       axios.post("https://alc-water-my-plants.herokuapp.com/api/users/login", loginData) // add endpoint for post request
         .then((res) => {
           console.log("submitted login:", res)
-          // localStorage.setItem("token", res.data.token);
-          history.push("/Home"); // <-- insert home page redirect
+          localStorage.setItem("token", res.data.token);
+          history.push("/Navbar"); // <-- insert home page redirect
         })
         .catch((err) => {
           console.error("something went wrong with post request: ", err);

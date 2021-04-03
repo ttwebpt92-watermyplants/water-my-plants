@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import { Container, Card } from "react-bootstrap"
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 export default function Users() {
@@ -32,14 +32,15 @@ export default function Users() {
   }
 
   return (
-    <div className='profile'>
-<nav className='nav'>
+    <Container>
+    <Card className='profile'>
+{/* <nav className='nav'>
 
         <Link to={''} className='home-nav'>Home</Link>
         <Link to={''} className='plantsList'>My Plants</Link>
         <Link to={''} className='addNewPlant'>Add New Plant</Link>
         <Link to={''} className='logout'>Logout</Link>
-      </nav>
+      </nav> */}
       <h1> Users </h1>
       <div >
         {users.map(user => (
@@ -51,6 +52,7 @@ export default function Users() {
           </div>
         ))}
       </div>  
-    </div>
+    </Card>
+    </Container>
   );
 }

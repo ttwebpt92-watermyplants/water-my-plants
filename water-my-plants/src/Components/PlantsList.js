@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import { Container, Card } from "react-bootstrap"
+
 import styled from 'styled-components';
 import img from '../images/flowers.jpeg';
 
@@ -20,15 +22,16 @@ export default function PlantsList() {
   }, []);
 
   return (
-    <div className='plants-list'>
-<NavBarDiv className='nav'>
+    <Container className='plants-list'>
+      <Card>
+{/* <NavBarDiv className='nav'>
                 <LinkButton to={'/'} className='signup'>Home</LinkButton>
                 <LinkButton to={''} className='signup'>Sign Up</LinkButton>
                 <LinkButton to={''} className='profile'>Profile</LinkButton>
                 <LinkButton to={''} className='login'>Login</LinkButton>
                 <LinkButton to={''} className='plantsList'>My Plants</LinkButton>
                 <LinkButton to={''} className='addNewPlant'>Add New Plant</LinkButton>
-            </NavBarDiv>
+            </NavBarDiv> */}
       <h1> My Plants </h1>
       <Box>
         {plants.map(plant => (
@@ -41,8 +44,8 @@ export default function PlantsList() {
         </div>
         ))}
       </Box>
-
-    </div>
+      </Card>    
+    </Container>
   );
 
 }

@@ -70,7 +70,7 @@ export default function SignupForm(props) {
             .then((res) => {
                 // console.log(res.data);
                 localStorage.setItem('username', newUser.username);
-                setUser({
+                setNewUser({
                     username: newUser.username
                 })
                 history.push('/Login');

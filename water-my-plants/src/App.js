@@ -7,7 +7,7 @@ import './App.css';
 import SignupForm from './Components/SignupForm'
 // Navbar component needs to be renamed slightly so as not to conflict with bootstrap
 // identifier
-// import NavBar from './Navbar'
+import NavBar from './Navbar'
 import Homepage from './Homepage'
 import Login from './Components/Login'
 import AddNewPlant from './Components/AddNewPlant';
@@ -28,7 +28,7 @@ function App() {
           </Container>
           <NavBarDiv>
             <Navbar>
-              <Navbar.Brand className="home-nav-btn" href="/Homepage" defaultActiveKey="/Homepage">Home</Navbar.Brand>
+              <Navbar.Brand className="home-nav-btn" href="/Homepage" defaultactivekey="/Homepage">Home</Navbar.Brand>
               <Nav  className="mr-auto">
                 <Nav.Link className="nav-btn" href="SignupForm">Sign Up</Nav.Link>
                 <Nav.Link className="nav-btn" href="Login">Login</Nav.Link>
@@ -37,7 +37,15 @@ function App() {
           </NavBarDiv>
 
           {/* Inner-App NavBar that is displayed after a user successfully logs in */}
-          {/* <NavBar /> */}
+          <div> 
+            { 
+              localStorage.getItem('token') &&            
+              // this.state.loggedIn && 
+              <div>
+              <NavBar />
+              </div>
+          }     
+          </div>
 
           <Switch>
             <Route exact path='/Homepage'>
