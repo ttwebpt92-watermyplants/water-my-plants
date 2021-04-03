@@ -42,6 +42,7 @@ function AddNewPlant(props) {
                 <LinkButton to={'/'} className='signup'>Home</LinkButton>
                 <Link to={'/users'} className='profile'>Profile</Link>
                 <Link to={'/plantsList'} className='plantsList'>My Plants</Link>
+                <Link to={'/logout'} className='logout'>Logout</Link>
             </NavBarDiv>
             <Box>
             <Header className='h-add-plant'>

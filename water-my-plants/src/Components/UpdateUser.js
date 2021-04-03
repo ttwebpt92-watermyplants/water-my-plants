@@ -49,6 +49,7 @@ function UpdateUser(props) {
                 <LinkButton to={'/login'} className='login'>Login</LinkButton>
                 <LinkButton to={'/plants'} className='plantsList'>My Plants</LinkButton>
                 <LinkButton to={'/addNewPlant'} className='addNewPlant'>Add New Plant</LinkButton>
+                <LinkButton to={'/logout'} className='logout'>Logout</LinkButton>
             </NavBarDiv>
 
 

@@ -50,6 +50,7 @@ function UpdatePlant(props) {
                 <Link to={'/profile'} className='profile'>Profile</Link>
                 <Link to={'/plantsList'} className='plantsList'>My Plants</Link>
                 <Link to={'/addNewPlant'} className='addNewPlant'>Add New Plant</Link>
+                <Link to={'/logout'} className='logout'>Logout</Link>
             </nav>
             <p>
                 Update Plant

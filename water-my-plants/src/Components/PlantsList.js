@@ -25,6 +25,7 @@ export default function PlantsList() {
         <Link to={'/'} className='signup'>Home</Link>
         <Link to={'/users'} className='profile'>Profile</Link>
         <Link to={'/addNewPlant'} className='addNewPlant'>Add New Plant</Link>
+        <Link to={'/logout'} className='logout'>Logout</Link>
             </NavBarDiv>
       <h1> My Plants </h1>
       <Box>
