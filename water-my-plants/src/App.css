@@ -52,17 +52,22 @@ button {
 }
 
 .update-user {
-  border-radius: 40px;
-  margin-right: 100%;
+  border-radius: 6px;
+  margin-right: 80%;
+  /* margin: 90px; */
   padding: 2% 5% 2% 5%;
-  background-color: #355e3b
+  color: black;
+  background-color: #f8e53d
 }
 
 .delete {
-  margin: -5.5% -3% -10% 80%;
+  /* margin: -5.5% -3% -10% 80%; */
+  margin-left: 80%;
   padding: 2% 2% 2% 2%;
   cursor: pointer;
-  background-color: #355e3b;
+  background-color: tomato;
+  color: white;
+  border-radius: 6px;
 }
 
 @keyframes App-logo-spin {
