@@ -15,6 +15,7 @@ import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
 import Profile from './Components/Users';
 import UpdateUser from './Components/UpdateUser';
+import Logout from './components/Logout';
 import { UserProvider } from './utils/UserContext';
 
 function App() {
@@ -26,41 +27,59 @@ function App() {
 
       return (
         <UserProvider value={{user, setUser}}>
-          <MainDiv>
-            <Container>
-            <Card >
-              <h1 className="h1-main">Remember The Plants!</h1>
-              <h4 className="text-muted">A Scheduling App for Plant Care</h4>
-            </Card>
-            </Container>
-            <NavBarDiv>
-              <Navbar>
-                <Navbar.Brand className="home-nav-btn" href="/Homepage" defaultActiveKey="/Homepage">Home</Navbar.Brand>
-                <Nav  className="mr-auto">
-                  <Nav.Link className="nav-btn" href="SignupForm">Sign Up</Nav.Link>
-                  <Nav.Link className="nav-btn" href="Login">Login</Nav.Link>
-                </Nav>        
-              </Navbar>
-            </NavBarDiv>
+        <MainDiv>
+          <Container>
+          <Card >
+            <h1 className="h1-main">Remember The Plants!</h1>
+            <h4 className="text-muted">A Scheduling App for Plant Care</h4>
+          </Card>
+          </Container>
+          <NavBarDiv>
+            <Navbar>
+              <Navbar.Brand className="home-nav-btn" href="/Homepage" defaultActiveKey="/Homepage">Home</Navbar.Brand>
+              <Nav  className="mr-auto">
+                <Nav.Link className="nav-btn" href="SignupForm">Sign Up</Nav.Link>
+                <Nav.Link className="nav-btn" href="Login">Login</Nav.Link>
+              </Nav>        
+            </Navbar>
+          </NavBarDiv>
 
-            {/* Inner-App NavBar that is displayed after a user successfully logs in */}
-            {/* <NavBar /> */}
+          {/* Inner-App NavBar that is displayed after a user successfully logs in */}
+          {/* <NavBar /> */}
 
-            <Switch>
-              <Route exact path='/Homepage'>
-                <Homepage/>
-              </Route>
-              <Route path='/SignupForm'>
-                <SignupForm/>
-              </Route>
-              <Route path='/Login'>
-                <Login/>
-              </Route>
-            </Switch>
+          <Switch>
+          <Route exact path='/addNewPlant' component={AddNewPlant}>
+          <AddNewPlant />
+        </Route>
+        <Route exact path='/plants/:id' component={UpdatePlant}>
+          <UpdatePlant />
+        </Route>
+        <Route exact path='/plants' component={PlantsList}>
+          <PlantsList />
+        </Route>
+        <Route exact path='/users/:id' component={UpdateUser}>
+          <UpdateUser />
+        </Route>
+        <Route exact path='/users' component={Profile}>
+          <Profile />
+        </Route>
+        <Route exact path='Logout' component={Logout}>
+          <Logout />
+        </Route>
+        <Route path='/login' component={Login}>
+          <Login />
+        </Route>
+        <Route exact path='/SignupForm' component={AddNewPlant}>
+          <SignupForm />
+        </Route>
+        <Route exact path='/Homepage' component={Homepage}>
+          <Homepage />
+        </Route>
+          </Switch>
 
 
-          </MainDiv>
-        </UserProvider>
+        </MainDiv>
+       </UserProvider>
       )
 }
 

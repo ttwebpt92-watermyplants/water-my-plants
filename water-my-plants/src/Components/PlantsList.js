@@ -9,7 +9,7 @@ export default function PlantsList() {
 
   useEffect(() => {
     axiosWithAuth()
-      .get('')
+      .get('/plants')
       .then(response => {
         console.log(response.data);
         setPlants(response.data);
@@ -22,12 +22,10 @@ export default function PlantsList() {
   return (
     <div className='plants-list'>
 <NavBarDiv className='nav'>
-                <LinkButton to={'/'} className='signup'>Home</LinkButton>
-                <LinkButton to={''} className='signup'>Sign Up</LinkButton>
-                <LinkButton to={''} className='profile'>Profile</LinkButton>
-                <LinkButton to={''} className='login'>Login</LinkButton>
-                <LinkButton to={''} className='plantsList'>My Plants</LinkButton>
-                <LinkButton to={''} className='addNewPlant'>Add New Plant</LinkButton>
+        <Link to={'/'} className='signup'>Home</Link>
+        <Link to={'/users'} className='profile'>Profile</Link>
+        <Link to={'/addNewPlant'} className='addNewPlant'>Add New Plant</Link>
+        <Link to={'/logout'} className='logout'>Logout</Link>
             </NavBarDiv>
       <h1> My Plants </h1>
       <Box>
