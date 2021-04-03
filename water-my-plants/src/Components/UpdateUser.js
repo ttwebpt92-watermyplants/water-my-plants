@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 
+import { Container, Card } from 'react-bootstrap'
 
 
 
@@ -40,7 +41,7 @@ function UpdateUser(props) {
     }
 
     return (
-        <div>
+        <MainForm>
       {/* Commented hard-coded navbar as there is a navbar component being used */}
 
 {/* <NavBarDiv className='nav'>
@@ -58,15 +59,32 @@ function UpdateUser(props) {
             <Header className='h-update-profile'>
                 Update User
             </Header>
+            {/* <Container> */}
+                {/* <Card> */}
             <FormDiv onSubmit={handleSubmit}>
                 <input type='text' name='name' placeholder='Name' value={user.name} onChange={handleChange} />
                 <input type='text' name='job' placeholder='Job' value={user.job} onChange={handleChange} />
                 <button type='submit'>Save</button>
             </FormDiv>
-        </div>
+            {/* </Card> */}
+            {/* </Container> */}
+        </MainForm>
     )
 };
 
+
+const MainForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  margin: 16px 8px;
+  padding: 16px;
+  background-color: white;
+`;
 
 const NavBarDiv = styled.div`
   display: flex;
@@ -87,11 +105,19 @@ const Header = styled.h1 `
     background-color: #FFEFD5;
 `
 const FormDiv = styled.form `
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 6px;
+    box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+    margin: 26px 28px;
+    width: auto;
     background-color: #6B8F50;
     padding: 10%;
     border: 2px solid black;
-    margin: 5%;
 `
+
 
 
 
