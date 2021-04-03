@@ -63,7 +63,7 @@ export default function Login (props) {
         .then((res) => {
           console.log("submitted login:", res)
           // localStorage.setItem("token", res.data.token);
-          //history.push("/Home");  <-- insert home page redirect
+          history.push("/Home"); // <-- insert home page redirect
         })
         .catch((err) => {
           console.error("something went wrong with post request: ", err);

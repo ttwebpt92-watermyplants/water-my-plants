@@ -1,9 +1,10 @@
 import axios from 'axios';
-import React,{ useState } from 'react'
+import React,{ useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap'
 import styled from 'styled-components'
 import 'bootstrap/dist/css/bootstrap.css'
+import UserContext from '../utils/UserContext';
 
 const initialState = {
     username:"",
@@ -20,6 +21,7 @@ export default function SignupForm(props) {
 
     const [newUser, setNewUser] = useState(initialState);
     const [errorData, setErrorData] = useState(initialErrorState);
+    const { setUser } = useContext(UserContext);
     const history = useHistory();
 
     const changeHandler = (event) => {
@@ -31,7 +33,7 @@ export default function SignupForm(props) {
 
     const submitForm = (event) => {
         event.preventDefault();
-        console.log("form submitted: ", newUser);
+        // console.log("form submitted: ", newUser);
         let usernameLength = newUser.username.length;
         let passwordLength = newUser.password.length;
         let phoneNumberLength = newUser.phone.length;
@@ -63,10 +65,16 @@ export default function SignupForm(props) {
                 error_visible:false,
                 error_msg:""
             });
-            console.log("post obj body: ", newUser);
-            axios.post("https://alc-water-my-plants.herokuapp.com/api/users/register", newUser) //<-- need endpoint for post request
+            // console.log("post obj body: ", newUser);
+            axios.post("https://alc-water-my-plants.herokuapp.com/api/users/register", newUser)
             .then((res) => {
-                console.log(res);
+                // console.log(res.data);
+                localStorage.setItem('username', newUser.username);
+                setUser({
+                    username: newUser.username
+                })
+                history.push('/Login');
+
             })
             .catch((err) => {
                 console.log(err);
