@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Link, Switch, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Container, Nav, Navbar, Card, Col } from 'react-bootstrap';
@@ -16,10 +16,17 @@ import UpdatePlant from './Components/UpdatePlant';
 import Profile from './Components/Users';
 import UpdateUser from './Components/UpdateUser';
 import Logout from './components/Logout';
+import { UserProvider } from './utils/UserContext';
 
 function App() {
 
+  const [user, setUser] = useState([{
+    username: localStorage.getItem('username'),
+    user_id: localStorage.getItem("user_id")
+  }]);
+
       return (
+        <UserProvider value={{user, setUser}}>
         <MainDiv>
           <Container>
           <Card >
@@ -72,6 +79,7 @@ function App() {
 
 
         </MainDiv>
+       </UserProvider>
       )
 }
 
