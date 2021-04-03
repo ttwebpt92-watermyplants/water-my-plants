@@ -9,7 +9,7 @@ export default function Users() {
 
   useEffect(() => {
     axiosWithAuth()
-      .get('')
+      .get('/users')
       .then(result => {
         console.log(result.data);
         setUsers(result.data);
@@ -22,7 +22,7 @@ export default function Users() {
   const handleDelete = (event, id) => {
     event.preventDefault()
     axios
-      .delete('')
+      .delete('https://alc-water-my-plants.herokuapp.com/api/users/:id')
       .then(result => {
         console.log('')
       })

@@ -40,15 +40,31 @@ function App() {
           {/* <NavBar /> */}
 
           <Switch>
-            <Route exact path='/Homepage'>
-              <Homepage/>
-            </Route>
-            <Route path='/SignupForm'>
-              <SignupForm/>
-            </Route>
-            <Route path='/Login'>
-              <Login/>
-            </Route>
+          <Route exact path='/addNewPlant' component={AddNewPlant}>
+          <AddNewPlant />
+        </Route>
+        <Route exact path='/plants/:id' component={UpdatePlant}>
+          <UpdatePlant />
+        </Route>
+        <Route exact path='/plants' component={PlantsList}>
+          <PlantsList />
+        </Route>
+        <Route exact path='/users/:id' component={UpdateUser}>
+          <UpdateUser />
+        </Route>
+        <Route exact path='/users' component={Profile}>
+          <Profile />
+        </Route>
+
+        <Route path='/login' component={Login}>
+          <Login />
+        </Route>
+        <Route exact path='/SignupForm' component={AddNewPlant}>
+          <SignupForm />
+        </Route>
+        <Route exact path='/Homepage' component={Homepage}>
+          <Homepage />
+        </Route>
           </Switch>
 
 
