@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
-import { Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
 
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import UserContext from '../utils/UserContext';
 
 const initialState = {
   username: "",
@@ -19,6 +20,7 @@ export default function Login (props) {
 
   const [loginData, setLoginData] = useState(initialState);
   const [errorData, setErrorData] = useState(initialErrorState);
+  const { setUser } = useContext(UserContext);
   const history = useHistory();
 
   const changeHandler = (event) => {
@@ -59,11 +61,21 @@ export default function Login (props) {
         error_visible: false,
         error: ""
       })
-      axios.post("https://alc-water-my-plants.herokuapp.com/api/users/login", loginData) // add endpoint for post request
+      axios.post("https://alc-water-my-plants.herokuapp.com/api/users/login", loginData)
         .then((res) => {
           console.log("submitted login:", res)
-          // localStorage.setItem("token", res.data.token);
-          history.push("/Home"); // <-- insert home page redirect
+          if ((!localStorage.getItem("username")) || (localStorage.getItem("username") !== loginData.username)) {
+            localStorage.setItem("username", loginData.username);
+            setUser({
+              username: loginData.username
+            });
+            history.push("/Homepage");
+            // console.log("username was same as before or not created yet")
+          }
+          else {
+            history.push("/Homepage");
+            // console.log("username wasnt found in localstorage, setted up new one");
+          }
         })
         .catch((err) => {
           console.error("something went wrong with post request: ", err);

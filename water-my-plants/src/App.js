@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Link, Switch, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Container, Nav, Navbar, Card, Col } from 'react-bootstrap';
@@ -15,44 +15,52 @@ import PlantsList from './Components/PlantsList';
 import UpdatePlant from './Components/UpdatePlant';
 import Profile from './Components/Users';
 import UpdateUser from './Components/UpdateUser';
+import { UserProvider } from './utils/UserContext';
 
 function App() {
 
+  const [user, setUser] = useState([{
+    username: localStorage.getItem('username'),
+    user_id: localStorage.getItem("user_id")
+  }]);
+
       return (
-        <MainDiv>
-          <Container>
-          <Card >
-            <h1 className="h1-main">Remember The Plants!</h1>
-            <h4 className="text-muted">A Scheduling App for Plant Care</h4>
-          </Card>
-          </Container>
-          <NavBarDiv>
-            <Navbar>
-              <Navbar.Brand className="home-nav-btn" href="/Homepage" defaultActiveKey="/Homepage">Home</Navbar.Brand>
-              <Nav  className="mr-auto">
-                <Nav.Link className="nav-btn" href="SignupForm">Sign Up</Nav.Link>
-                <Nav.Link className="nav-btn" href="Login">Login</Nav.Link>
-              </Nav>        
-            </Navbar>
-          </NavBarDiv>
+        <UserProvider value={{user, setUser}}>
+          <MainDiv>
+            <Container>
+            <Card >
+              <h1 className="h1-main">Remember The Plants!</h1>
+              <h4 className="text-muted">A Scheduling App for Plant Care</h4>
+            </Card>
+            </Container>
+            <NavBarDiv>
+              <Navbar>
+                <Navbar.Brand className="home-nav-btn" href="/Homepage" defaultActiveKey="/Homepage">Home</Navbar.Brand>
+                <Nav  className="mr-auto">
+                  <Nav.Link className="nav-btn" href="SignupForm">Sign Up</Nav.Link>
+                  <Nav.Link className="nav-btn" href="Login">Login</Nav.Link>
+                </Nav>        
+              </Navbar>
+            </NavBarDiv>
 
-          {/* Inner-App NavBar that is displayed after a user successfully logs in */}
-          {/* <NavBar /> */}
+            {/* Inner-App NavBar that is displayed after a user successfully logs in */}
+            {/* <NavBar /> */}
 
-          <Switch>
-            <Route exact path='/Homepage'>
-              <Homepage/>
-            </Route>
-            <Route path='/SignupForm'>
-              <SignupForm/>
-            </Route>
-            <Route path='/Login'>
-              <Login/>
-            </Route>
-          </Switch>
+            <Switch>
+              <Route exact path='/Homepage'>
+                <Homepage/>
+              </Route>
+              <Route path='/SignupForm'>
+                <SignupForm/>
+              </Route>
+              <Route path='/Login'>
+                <Login/>
+              </Route>
+            </Switch>
 
 
-        </MainDiv>
+          </MainDiv>
+        </UserProvider>
       )
 }
 
