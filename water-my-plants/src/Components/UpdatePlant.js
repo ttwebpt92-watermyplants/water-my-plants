@@ -43,7 +43,10 @@ function UpdatePlant(props) {
 
     return (
         <div>
-<nav className='nav'>
+
+            {/* Commented hard-coded navbar as there is a navbar component being used */}
+
+            {/* <nav className='nav'>
 
                 <Link to={'/'} className='signup'>Home</Link>
                 <Link to={'/SignupForm'} className='signup'>Sign Up</Link>
@@ -51,7 +54,7 @@ function UpdatePlant(props) {
                 <Link to={'/plantsList'} className='plantsList'>My Plants</Link>
                 <Link to={'/addNewPlant'} className='addNewPlant'>Add New Plant</Link>
                 <Link to={'/logout'} className='logout'>Logout</Link>
-            </nav>
+            </nav> */}
             <p>
                 Update Plant
             </p>

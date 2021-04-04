@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import { Container, Card } from "react-bootstrap"
+
 import styled from 'styled-components';
 import img from '../images/flowers.jpeg';
 
@@ -20,14 +22,19 @@ export default function PlantsList() {
   }, []);
 
   return (
+    <Container>
+      <Card>
     <div className='plants-list'>
-<NavBarDiv className='nav'>
+      {/* Commented hard-coded navbar as there is a navbar component being used */}
+      
+    {/* <NavBarDiv className='nav'>
         <Link to={'/'} className='signup'>Home</Link>
         <Link to={'/users'} className='profile'>Profile</Link>
         <Link to={'/addNewPlant'} className='addNewPlant'>Add New Plant</Link>
         <Link to={'/logout'} className='logout'>Logout</Link>
-            </NavBarDiv>
-      <h1> My Plants </h1>
+      </NavBarDiv> */}
+ 
+       <h1> My Plants </h1>
       <Box>
         {plants.map(plant => (
           <div key={plant.id} className='plant-card'>
@@ -39,8 +46,9 @@ export default function PlantsList() {
         </div>
         ))}
       </Box>
-
-    </div>
+      </div>
+      </Card>   
+      </Container>
   );
 
 }
