@@ -69,12 +69,8 @@ export default function SignupForm(props) {
             axios.post("https://alc-water-my-plants.herokuapp.com/api/users/register", newUser)
             .then((res) => {
                 // console.log(res.data);
-<<<<<<< HEAD
-                setUser({
-=======
                 localStorage.setItem('username', newUser.username);
                 setNewUser({
->>>>>>> bc9eb84ccf205500b0b878f93ae3364e1feb7555
                     username: newUser.username
                 })
                 history.push('/Login');
