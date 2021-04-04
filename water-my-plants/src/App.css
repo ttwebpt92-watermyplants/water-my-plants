@@ -115,7 +115,7 @@ button {
   font-size: 1.3rem;
 }
 
-@media all and (max-width: 360px)
+@media all and (max-width: 480px)
 {
   .profile-card {
     border: 2px solid#355e3b;
@@ -126,14 +126,52 @@ button {
   .update-user {
     border-radius: 6px;
     margin-right: 0%;
-    /* margin: 90px; */
     padding: 2% 5% 2% 5%;
     color: black;
     background-color: #f8e53d
   }
 
   .delete {
-    /* margin: -5.5% -3% -10% 80%; */
+    margin-left: 0%;
+    padding: 2% 2% 2% 2%;
+    cursor: pointer;
+    background-color: tomato;
+    color: white;
+    border-radius: 6px;
+  }
+}
+
+@media all and (max-width: 768px)
+{
+  .update-user {
+    border-radius: 6px;
+    margin-right: 0%;
+    padding: 2% 5% 2% 5%;
+    color: black;
+    background-color: #f8e53d
+  }
+
+  .delete {
+    margin-left: 0%;
+    padding: 2% 2% 2% 2%;
+    cursor: pointer;
+    background-color: tomato;
+    color: white;
+    border-radius: 6px;
+  }
+}
+
+@media all and (max-width: 520px)
+{
+  .update-user {
+    border-radius: 6px;
+    margin-right: 0%;
+    padding: 2% 5% 2% 5%;
+    color: black;
+    background-color: #f8e53d
+  }
+
+  .delete {
     margin-left: 0%;
     padding: 2% 2% 2% 2%;
     cursor: pointer;
