@@ -32,7 +32,8 @@ export default function Users() {
   }
 
   return (
-    <Container>
+    <Container fluid='sm'>
+      <br/>
     <Card className='profile'>
     
     {/* Commented hard-coded navbar as there is a navbar component being used */}
