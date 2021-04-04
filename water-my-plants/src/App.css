@@ -114,3 +114,20 @@ button {
   font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
 }
+
+/* @media all and (max-width: 360px)
+{
+  .home-nav-btn {
+    height: 3rem;
+    width: 7rem;
+    margin: 5px;
+    font-size: 1.50em;
+  }
+
+  .nav-btn {
+    height: 3rem;
+    width: 7rem;
+    margin: 5px;
+    font-size: 1.50em;
+  }
+} */

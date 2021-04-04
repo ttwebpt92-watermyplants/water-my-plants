@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container, Nav, Navbar, Card } from 'react-bootstrap';
+import { Container, Nav, Navbar, Card, NavDropdown } from 'react-bootstrap';
 import { Switch, Link, NavLink, Route } from 'react-router-dom'
 
 import PlantsList from './Components/PlantsList';
@@ -15,18 +15,24 @@ export default function NavBar() {
 
     return (
         <NavBarContainer>
-            <NavBarDiv>
-                <Navbar>
-                <Navbar.Brand className="home-nav-btn" href="/UpdateUser" defaultactivekey="/UpdateUser">Update Profile</Navbar.Brand>
-                <Nav  className="mr-auto">
-                    <Nav.Link className="nav-btn" href="/Users">Users</Nav.Link>
-                    <Nav.Link className="nav-btn" href="/PlantsList">My Plants</Nav.Link>
-                    <Nav.Link className="nav-btn" href="/AddNewPlant">Add Plants</Nav.Link>
-                    <Nav.Link className="nav-btn" href="/Logout">Log Out</Nav.Link>
-                    <Nav.Link className="nav-btn" href="#">Help</Nav.Link>
-                </Nav>        
+            <Container fluid>
+
+            {/* <NavBarDiv> */}
+                <Navbar collapseOnSelect expand="sm" bg="light" variant="light">
+                    <Navbar.Brand className="home-nav-btn" href="/UpdateUser" defaultactivekey="/UpdateUser">Update Profile</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav  className="mr-auto">
+                            <Nav.Link className="nav-btn" href="/Users">Users</Nav.Link>
+                            <Nav.Link className="nav-btn" href="/PlantsList">My Plants</Nav.Link>
+                            <Nav.Link className="nav-btn" href="/AddNewPlant">Add Plants</Nav.Link>
+                            <Nav.Link className="nav-btn" href="/Logout">Log Out</Nav.Link>
+                            <Nav.Link className="nav-btn" href="#">Help</Nav.Link>
+                        </Nav>  
+                    </Navbar.Collapse>     
                 </Navbar>
-            </NavBarDiv>
+            {/* </NavBarDiv> */}
+            </Container>
 
             <Switch>
             <Route exact path="/UpdateUser">
@@ -45,9 +51,7 @@ export default function NavBar() {
                 <Profile/>
             </Route>
           </Switch>
-
-        </NavBarContainer>
-
+     </NavBarContainer>
     )
 }
 
