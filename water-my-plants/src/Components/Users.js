@@ -39,7 +39,7 @@ export default function Users() {
       <div >
         {users.map(user => (
           <div key={users.id} className='profile-card'>
-             <Link className='update-user' to={''}>Edit</Link>
+             <Link className='update-user' to={'/users/2'}>Edit</Link>
             <div>User Name: {user.username}</div>
             <div>Phone Number: {user.phoneNumber}</div>
             <div className='delete' role='button' onClick={(e) => handleDelete(e, user.id)}>Delete</div>
