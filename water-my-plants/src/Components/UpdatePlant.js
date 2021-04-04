@@ -34,7 +34,7 @@ function UpdatePlant(props) {
         axiosWithAuth()
         .put(`/plants/${plant.id}`, plant)
         .then(result => {
-            props.history.push('')
+            props.history.push('/plants')
         })
         .catch(error => {
             console.log(error)
