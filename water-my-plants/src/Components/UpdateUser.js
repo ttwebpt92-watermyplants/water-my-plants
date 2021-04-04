@@ -1,55 +1,60 @@
 
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 
 import { Button } from 'react-bootstrap'
+import axiosWithAuth from '../utils/axiosWithAuth';
+import UserContext from "../utils/UserContext";
 
 
 
 function UpdateUser(props) {
+
     // state for user
-    const [user, setUser] = useState({
-        id: '',
-        name: '',
-        job: '',
-    })
 
-
+    const {user} = useContext(UserContext);
+    console.log("my user: ", user);
+    const [users, setUsers] = useState(user) 
 
     // handleChange function to control inputs
     const handleChange = (event) => {
-        setUser({
-            ...user,
+        setUsers({
+            ...users,
             [event.target.name]: event.target.value,
         })
     }
 
     // handleSubmit function that takes an event & where put request will be made.
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        axios
-        .put('https://alc-water-my-plants.herokuapp.com/api/users/2', user) // sends a post request to the server and sends data to the signin endpoint
+    const handleSubmit =(event) => {
+        event.preventDefault();
+        axiosWithAuth()
+        .put(`/users/:${user.id}`, users) // sends a post request to the server and sends data to the signin endpoint
         .then(result => {
-              //props.history.push('/users')   //reroute back to users component
+            //   props.history.push('/users')   //reroute back to users component
               console.log(result.data)
         })
         .catch(error => {
-            console.log(error)
+            console.log("cannot change user")
         })
     }
 
     return (
-        <MainForm>
+        <MainForm onSubmit={handleSubmit}>
             <Header className='h-update-profile'>
                 Update User
             </Header>
 
-            <FormDiv onSubmit={handleSubmit}>
-                <input type='text' name='name' placeholder='Name' value={user.name} onChange={handleChange} />
-                <input type='text' name='job' placeholder='Job' value={user.job} onChange={handleChange} />
-                <Button variant='warning' type='submit'>Save</Button>
+            <FormDiv>
+                <label>username&nbsp;
+                <input type='text' name='username' placeholder='username' value={users.username} onChange={handleChange} />
+                </label>
+                <label>password&nbsp;
+                <input type='password' name='password' placeholder='password' value={users.password} onChange={handleChange}/>
+                </label>
+                <label>phone&nbsp;
+                <input type='phone' name='phone' placeholder='phone' value={users.phone} onChange={handleChange} />
+                </label>
+                <Button variant='warning' type="submit">Save</Button>
             </FormDiv>
         </MainForm>
     )
@@ -72,7 +77,7 @@ const MainForm = styled.form`
 const Header = styled.h1 `
     background-color: #FFEFD5;
 `
-const FormDiv = styled.form `
+const FormDiv = styled.div `
     display: flex;
     flex-direction: column;
     justify-content: space-around;
