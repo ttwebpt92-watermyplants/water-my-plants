@@ -30,7 +30,7 @@ function UpdateUser(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
         axios
-        .put('https://alc-water-my-plants.herokuapp.com/api/users/:id', user) // sends a post request to the server and sends data to the signin endpoint
+        .put('https://alc-water-my-plants.herokuapp.com/api/users/2', user) // sends a post request to the server and sends data to the signin endpoint
         .then(result => {
               //props.history.push('/users')   //reroute back to users component
               console.log(result.data)
