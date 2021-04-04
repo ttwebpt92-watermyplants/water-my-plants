@@ -22,9 +22,9 @@ export default function Users() {
   const handleDelete = (event, id) => {
     event.preventDefault()
     axios
-      .delete('https://alc-water-my-plants.herokuapp.com/api/users/:id')
+      .delete('https://alc-water-my-plants.herokuapp.com/api/users/2')
       .then(result => {
-        console.log('')
+        console.log('User was deleted')
       })
       .catch(error => {
         console.log(error)
