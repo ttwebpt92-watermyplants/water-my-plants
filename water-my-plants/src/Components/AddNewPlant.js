@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+import { Container, Card, Button } from 'react-bootstrap'
 import img from '../images/flowers.jpeg';
-
 
 function AddNewPlant(props) {
     // state for data
@@ -36,16 +36,7 @@ function AddNewPlant(props) {
     }
 
     return (
-        <div>
-            {/* Commented hard-coded navbar as there is a navbar component being used */}
-
-            {/* <NavBarDiv className='nav'>
-
-                <LinkButton to={'/'} className='signup'>Home</LinkButton>
-                <Link to={'/users'} className='profile'>Profile</Link>
-                <Link to={'/plantsList'} className='plantsList'>My Plants</Link>
-                <Link to={'/logout'} className='logout'>Logout</Link>
-            </NavBarDiv> */}
+        <Container fluid="sm">
 
             <Box>
             <Header className='h-add-plant'>
@@ -55,10 +46,10 @@ function AddNewPlant(props) {
                 <input type='text' name='nickName' placeholder='Nickname' value={newPlant.nickName} onChange={handleChange} />
                 <input type='text' name='species' placeholder='Species' value={newPlant.species} onChange={handleChange} />
                 <input type='text' name='waterFrequency' placeholder='Water Frequency' value={newPlant.waterFrequency} onChange={handleChange} />
+            <Button variant='warning' size='lg' type='submit'>Add New Plant</Button>
             </FormDiv>
-            <button type='submit'>Add New Plant</button>
             </Box>
-        </div>
+        </Container>
     )
 };
 
@@ -75,18 +66,21 @@ const NavBarDiv = styled.div`
   padding: 16px;
   background-color: white;
 `
-const LinkButton = styled(NavLink) `
-    text-decoration: none;
-    color:black;
-`
 const Header = styled.h1 `
     background-color: #FFEFD5;
 `
 const FormDiv = styled.form `
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
     background-color: #6B8F50;
-    padding: 10%;
     border: 2px solid black;
-    margin: 17%;
+    border-radius: 6px;
+    box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+    margin: 26px 28px;
+    width: auto;
+    padding: 10%;
 `
 const Box = styled.div`
     background-image: url(${img});

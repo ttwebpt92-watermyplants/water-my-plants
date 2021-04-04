@@ -114,3 +114,31 @@ button {
   font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
 }
+
+@media all and (max-width: 360px)
+{
+  .profile-card {
+    border: 2px solid#355e3b;
+    margin: 2% 20% 3% 20%;
+    padding: 2% 2% 4.5% 2%;
+  }
+
+  .update-user {
+    border-radius: 6px;
+    margin-right: 0%;
+    /* margin: 90px; */
+    padding: 2% 5% 2% 5%;
+    color: black;
+    background-color: #f8e53d
+  }
+
+  .delete {
+    /* margin: -5.5% -3% -10% 80%; */
+    margin-left: 0%;
+    padding: 2% 2% 2% 2%;
+    cursor: pointer;
+    background-color: tomato;
+    color: white;
+    border-radius: 6px;
+  }
+}
