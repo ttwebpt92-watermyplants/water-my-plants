@@ -23,7 +23,7 @@ export default function Users() {
   const handleDelete = (event, id) => {
     event.preventDefault()
     axios
-      .delete('')
+      .delete('/users')
       .then(result => {
         console.log('')
       })

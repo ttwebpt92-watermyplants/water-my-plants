@@ -5,21 +5,26 @@ import styled from 'styled-components';
 import { Container, Card, Button } from 'react-bootstrap'
 import img from '../images/flowers.jpeg';
 
+
+
 function AddNewPlant(props) {
-    // state for data
-    const [newPlant, setNewPlant] = useState({
-        nickName: '',
-        species: '',
-        h2oFrequency: '',
-    })
+  // state for data
+  const [newPlant, setNewPlant] = useState({
+      nickName: '',
+      species: '',
+      h2oFrequency: '',
+  })
+
+
 
     // handleChange function to control inputs
     const handleChange = (event) => {
-        setNewPlant({
-            ...newPlant,
-            [event.target.name]: event.target.value,
-        })
-    }
+      setNewPlant({
+          ...newPlant,
+          [event.target.name]: event.target.value,
+      })
+  }
+
 
     // handleSubmit function that takes an event & where post request will be made.
     const handleSubmit = (event) => {
@@ -33,9 +38,9 @@ function AddNewPlant(props) {
         .catch(err => {
             console.log(err)
         })
-    }
+      }
 
-    return (
+
         <Container fluid="sm">
 
             <Box>
@@ -50,7 +55,7 @@ function AddNewPlant(props) {
             </FormDiv>
             </Box>
         </Container>
-    )
+
 };
 
 
