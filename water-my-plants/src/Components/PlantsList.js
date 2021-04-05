@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth';
-import { Container, Card } from "react-bootstrap"
+import { Container, Card, CarouselItem } from "react-bootstrap"
+
 
 import styled from 'styled-components';
 import img from '../images/flowers.jpeg';
@@ -42,7 +43,7 @@ export default function PlantsList() {
           <div>Nickname: {plant.nickname}</div>
           <div>Species: {plant.species}</div>
           <div>H2O Frequency: {plant.h2oFrequency}</div>
-          <Link className='update-user' to={``}>Edit</Link>
+          <Link className='update-user' to={`/users`}>Edit</Link>
         </div>
         ))}
       </Box>

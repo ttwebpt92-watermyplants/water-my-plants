@@ -46,7 +46,7 @@ function AddNewPlant(props) {
                 <input type='text' name='nickName' placeholder='Nickname' value={newPlant.nickName} onChange={handleChange} />
                 <input type='text' name='species' placeholder='Species' value={newPlant.species} onChange={handleChange} />
                 <input type='text' name='waterFrequency' placeholder='Water Frequency' value={newPlant.waterFrequency} onChange={handleChange} />
-            <Button variant='warning' size='lg' type='submit'>Add New Plant</Button>
+                <Link className='update-user'  to={`/plants/2` }>AddNewPlant</Link>
             </FormDiv>
             </Box>
         </Container>
