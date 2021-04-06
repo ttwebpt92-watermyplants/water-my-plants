@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth';
-import { Container, Card, CarouselItem } from "react-bootstrap"
+import { Container, Card, CarouselItem, Button } from "react-bootstrap"
 
 
 import styled from 'styled-components';
 import img from '../images/flowers.jpeg';
 
-export default function PlantsList() {
+export default function PlantsList(props) {
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
@@ -22,6 +22,25 @@ export default function PlantsList() {
       });
   }, []);
 
+  // const deletePlantFn = (plant_id) => {
+  //   axiosWithAuth()
+  //   .delete(`/plants/${plant_id}`)
+  //     .then(res => {
+  //       console.log(`plant with id of ${plant_id} was successfuly deleted`)
+  //     })
+  //     .catch(err => console.log("cannot delete plant"))
+  // }
+
+  const deletePlant = (id) => {
+    const newPlantArr = [...plants];
+    const indexOfDelete = newPlantArr.findIndex((item) => item.id === id);
+		newPlantArr.splice(indexOfDelete, 1);
+		setPlants(newPlantArr);
+  }
+  const deleteHandler = (id) => {
+    deletePlant(id);
+  }
+
   return (
     <Container fluid="sm">
       <br/>
@@ -30,7 +49,7 @@ export default function PlantsList() {
         {plants.map(plant => (
           <PlantDiv>
           <div key={plant.id} className='plant-card'>
-          <div className='delete' role="button">Delete</div>
+          <div className='delete' role="button" onClick={() => deleteHandler(plant.id)}>Delete</div>
           <div>Nickname: {plant.nickname}</div>
           <div>Species: {plant.species}</div>
           <div>H2O Frequency: {plant.h2o_frequency}</div>
