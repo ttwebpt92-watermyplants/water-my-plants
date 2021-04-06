@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-import { Container, Card, Button } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
 import img from '../images/flowers.jpeg';
 
 
@@ -10,12 +10,13 @@ import img from '../images/flowers.jpeg';
 function AddNewPlant(props) {
   // state for data
   const [newPlant, setNewPlant] = useState({
-      nickName: '',
+      nickname: '',
       species: '',
-      h2oFrequency: '',
+      h2o_frequency: 0,
+      h2o_unit: ""
   })
 
-
+  const history = useHistory();
 
     // handleChange function to control inputs
     const handleChange = (event) => {
@@ -30,17 +31,19 @@ function AddNewPlant(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
         axios
-        .post('https://alc-water-my-plants.herokuapp.com/api/plants/2', newPlant)
+        .post('https://alc-water-my-plants.herokuapp.com/api/plants', newPlant)
         .then(result => {
-            console.log(result.data)
-            localStorage.setItem('token', result.data.token) 
+            console.log("body of new plant: ", newPlant);
+            console.log("success on adding new plant");
+            console.log(result.data);
+            history.push("/PlantList");
         })
         .catch(err => {
             console.log(err)
         })
       }
 
-
+      return (
         <Container fluid="sm">
 
             <Box>
@@ -48,15 +51,17 @@ function AddNewPlant(props) {
                 Add New Plant
             </Header>
             <FormDiv onSubmit={handleSubmit}>
-                <input type='text' name='nickName' placeholder='Nickname' value={newPlant.nickName} onChange={handleChange} />
-                <input type='text' name='species' placeholder='Species' value={newPlant.species} onChange={handleChange} />
-                <input type='text' name='waterFrequency' placeholder='Water Frequency' value={newPlant.waterFrequency} onChange={handleChange} />
-                <Link className='update-user'  to={`/plants/2` }>AddNewPlant</Link>
+                <input type='text' name='nickname' placeholder='nickname' value={newPlant.nickname} onChange={handleChange} />
+                <input type='text' name='species' placeholder='species' value={newPlant.species} onChange={handleChange} />
+                <input type='number' name='h2o_frequency' placeholder='Water Frequency' value={newPlant.h2o_frequency} onChange={handleChange} />
+                <input type='text' name='h2o_unit' placeholder='water unit' value={newPlant.h2o_unit} onChange={handleChange} />
+                <Button variant="warning" size="lg" type="submit">Add new plant</Button>
             </FormDiv>
             </Box>
         </Container>
-
-};
+      )
+    };
+    
 
 
 ///// Styling /////

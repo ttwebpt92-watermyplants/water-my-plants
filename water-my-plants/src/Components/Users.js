@@ -8,12 +8,13 @@ import UserContext from "../utils/UserContext";
 export default function Users() {
   const [usersArr, setUsersArr] = useState([]);
   const {user, setUser} = useContext(UserContext);
+
   useEffect(() => {
     axiosWithAuth()
       .get('/users')
       .then(result => {
         console.log(result.data);
-        setUsers(result.data);
+        setUsersArr(result.data);
       })
       .catch(err => {
         console.log(err);
@@ -22,8 +23,8 @@ export default function Users() {
 
   const handleDelete = (event, id) => {
     event.preventDefault()
-    axios
-      .delete('/users')
+    axiosWithAuth()
+      .delete(`/users/${id}`)
       .then(result => {
         console.log('')
       })

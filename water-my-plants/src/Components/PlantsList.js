@@ -23,31 +23,22 @@ export default function PlantsList() {
   }, []);
 
   return (
-    <Container>
-      <Card>
-    <div className='plants-list'>
-      {/* Commented hard-coded navbar as there is a navbar component being used */}
-      
-    {/* <NavBarDiv className='nav'>
-        <Link to={'/'} className='signup'>Home</Link>
-        <Link to={'/users'} className='profile'>Profile</Link>
-        <Link to={'/addNewPlant'} className='addNewPlant'>Add New Plant</Link>
-        <Link to={'/logout'} className='logout'>Logout</Link>
-      </NavBarDiv> */}
- 
-       <h1> My Plants </h1>
-      <Box>
+    <Container fluid="sm">
+      <br/>
+      <Card className="profile">
+        <h1> My Plants </h1>
         {plants.map(plant => (
+          <PlantDiv>
           <div key={plant.id} className='plant-card'>
-          <div className='delete'>Delete</div>
+          <div className='delete' role="button">Delete</div>
           <div>Nickname: {plant.nickname}</div>
           <div>Species: {plant.species}</div>
-          <div>H2O Frequency: {plant.h2oFrequency}</div>
+          <div>H2O Frequency: {plant.h2o_frequency}</div>
+          <div>H2O units: {plant.h2o_unit}</div>
           <Link className='update-user' to={`/users`}>Edit</Link>
         </div>
+        </PlantDiv>
         ))}
-      </Box>
-      </div>
       </Card>   
       </Container>
   );
@@ -55,6 +46,16 @@ export default function PlantsList() {
 }
 
 ///// Styling /////
+
+const PlantDiv  = styled.div`
+  width:300px;
+  padding-bottom:3px;
+  border: 1px solid grey;
+  margin:1% auto;
+  display:flex;
+  flex-direction: column;
+`
+
 const NavBarDiv = styled.div`
   display: flex;
   flex-direction: row;
@@ -72,5 +73,4 @@ const LinkButton = styled(NavLink) `
 `
 const Box = styled.div`
   background-image: url(${img});
-  padding: 50%;
 `
