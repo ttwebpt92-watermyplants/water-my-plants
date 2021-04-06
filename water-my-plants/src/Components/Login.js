@@ -66,6 +66,8 @@ export default function Login (props) {
           console.log("submitted login:", res)
           if ((!localStorage.getItem("username")) || (localStorage.getItem("username") !== loginData.username)) {
             localStorage.setItem("username", loginData.username);
+            localStorage.setItem("token", res.data.token);
+            console.log(res.data.token);
             setUser({
               username: loginData.username
             });
@@ -73,6 +75,7 @@ export default function Login (props) {
             // console.log("username was same as before or not created yet")
           }
           else {
+            localStorage.setItem("token", res.data.token);
             history.push("/PlantsList");
             // console.log("username wasnt found in localstorage, setted up new one");
           }
